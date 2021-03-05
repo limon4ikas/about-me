@@ -4,6 +4,7 @@ import { GlobalStyles } from '../styles/global';
 import Header from './Header';
 import AboutMe from './AboutMe';
 import Projects from './Projects';
+import Footer from './Footer';
 
 const Container = styled.div`
   max-width: 120rem;
@@ -12,6 +13,11 @@ const Container = styled.div`
   border-radius: 2rem;
 
   background-color: #1f1f2f;
+
+  @media only screen and (max-width: 75em) {
+    border-radius: 0;
+    margin: 0;
+  }
 `;
 
 const App: FunctionComponent = () => {
@@ -21,6 +27,7 @@ const App: FunctionComponent = () => {
       <Header />
       <AboutMe />
       <Projects />
+      <Footer />
     </Container>
   );
 };

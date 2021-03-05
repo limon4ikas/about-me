@@ -33,20 +33,20 @@ const NavList = styled.ul`
   gap: 2rem;
 `;
 
-const NavItem = styled.li`
-  box-sizing: content-box;
-  border-bottom: 3px transparent #448fff;
-
-  &:hover {
-    border-bottom: 3px solid #448fff;
-  }
-`;
+const NavItem = styled.li``;
 
 const NavLink = styled.a`
   &:link,
   &:visited {
     text-decoration: none;
     color: currentColor;
+    border-bottom: 0px solid #448fff;
+    transition: all 0.2s;
+  }
+
+  &:link:hover,
+  &:visited:hover {
+    border-bottom: 3px solid #448fff;
   }
 `;
 
