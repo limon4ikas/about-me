@@ -2,10 +2,12 @@ import styled from 'styled-components';
 import { AiFillInstagram } from 'react-icons/ai';
 import { AiFillTwitterSquare } from 'react-icons/ai';
 import { AiFillGithub } from 'react-icons/ai';
+import myPhoto from '../assets/img/profile-photo.png';
+import { FunctionComponent } from 'react';
 
 const Container = styled.section`
   padding: 0 4rem;
-  margin-top: 4rem;
+  height: 100vh;
 
   display: flex;
   align-items: center;
@@ -45,6 +47,10 @@ const Photo = styled.img`
   &:hover {
     border: 0rem transparent #2a2c3c;
   }
+
+  @media only screen and (max-width: 31.25) {
+    display: none;
+  }
 `;
 
 const Text = styled.p`
@@ -61,7 +67,7 @@ const SocialBox = styled.div`
 const FollowMeText = styled.p`
   width: 100%;
   font-size: 1.6rem;
-  opacity: 0.3;
+  color: #4e5169;
 `;
 
 const SocialIconBox = styled.div`
@@ -75,12 +81,12 @@ const SocialIconBox = styled.div`
   }
 `;
 
-const AboutMe = () => {
+const AboutMe: FunctionComponent = () => {
   return (
     <Container>
       <AboutMeContentBox>
         <HeadingBox>
-          <HeadingTop>Hi, I am Danil,</HeadingTop>
+          <HeadingTop>Hi, I am Cat,</HeadingTop>
           <HeadingBottom>Front-End Developer</HeadingBottom>
         </HeadingBox>
 
@@ -106,7 +112,7 @@ const AboutMe = () => {
       </AboutMeContentBox>
 
       <PhotoBox>
-        <Photo src="./profile-photo.png" />
+        <Photo src={myPhoto} alt="My Photo" />
       </PhotoBox>
     </Container>
   );

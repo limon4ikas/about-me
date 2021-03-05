@@ -5,10 +5,12 @@ import Header from './Header';
 import AboutMe from './AboutMe';
 import Projects from './Projects';
 import Footer from './Footer';
+import Articles from './Articles';
+import Contact from './Contact';
 
 const Container = styled.div`
   max-width: 120rem;
-  margin: 15rem auto;
+  margin: 8rem auto;
   font-size: 1.6rem;
   border-radius: 2rem;
 
@@ -27,6 +29,8 @@ const App: FunctionComponent = () => {
       <Header />
       <AboutMe />
       <Projects />
+      <Articles />
+      <Contact />
       <Footer />
     </Container>
   );

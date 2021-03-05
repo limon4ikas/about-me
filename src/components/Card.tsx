@@ -35,12 +35,15 @@ const TagsBox = styled.div`
 `;
 
 const Language = styled.p`
-  color: #e1effe;
+  color: #b2e2ff;
 `;
 
 const Stars = styled.p`
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+
+  color: #b2e2ff;
 `;
 
 const Card = () => {

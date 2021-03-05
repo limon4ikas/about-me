@@ -5,9 +5,9 @@ const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 4rem;
 
   height: 10rem;
-  padding: 0 4rem;
 
   font-size: 2rem;
 `;

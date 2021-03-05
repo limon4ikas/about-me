@@ -1,3 +1,4 @@
+import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import Card from '../components/Card';
 
@@ -32,8 +33,9 @@ const LearnMore = styled.button`
   color: currentColor;
   font-size: inherit;
   display: inline-block;
+  cursor: pointer;
 
-  color: #e1effe;
+  color: #b2e2ff;
   transition: all 0.2s;
 
   &:hover {
@@ -44,7 +46,7 @@ const LearnMore = styled.button`
   }
 `;
 
-const Projects = () => {
+const Projects: FunctionComponent = () => {
   return (
     <Container>
       <SectionNameContainer>
