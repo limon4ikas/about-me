@@ -5,20 +5,50 @@ const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  height: 10rem;
+  padding: 0 4rem;
+
+  font-size: 2rem;
 `;
 
-const LogoBox = styled.div``;
+const LogoBox = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 const Logo = styled(AiOutlineCodeSandbox)`
-  width: 2rem;
-  height: 2rem;
+  width: 6rem;
+  height: 6rem;
+
+  fill: #448fff;
 `;
 
 const NavBox = styled.nav``;
 
-const NavList = styled.ul``;
+const NavList = styled.ul`
+  list-style: none;
 
-const NavItem = styled.li``;
+  display: flex;
+  gap: 2rem;
+`;
+
+const NavItem = styled.li`
+  box-sizing: content-box;
+  border-bottom: 3px transparent #448fff;
+
+  &:hover {
+    border-bottom: 3px solid #448fff;
+  }
+`;
+
+const NavLink = styled.a`
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: currentColor;
+  }
+`;
 
 const Header = () => {
   return (
@@ -28,9 +58,15 @@ const Header = () => {
       </LogoBox>
       <NavBox>
         <NavList>
-          <NavItem></NavItem>
-          <NavItem></NavItem>
-          <NavItem></NavItem>
+          <NavItem>
+            <NavLink href="#">About</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Articles</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Contact</NavLink>
+          </NavItem>
         </NavList>
       </NavBox>
     </Container>
