@@ -24,6 +24,7 @@ const AboutMeContentBox = styled.div`
 const HeadingBox = styled.h1`
   display: flex;
   flex-direction: column;
+  font-weight: 300;
 `;
 
 const HeadingTop = styled.span`
@@ -43,10 +44,6 @@ const Photo = styled.img`
 
   border-radius: 50%;
   border: 1rem solid #2a2c3c;
-
-  &:hover {
-    border: 0rem transparent #2a2c3c;
-  }
 
   @media only screen and (max-width: 31.25) {
     display: none;

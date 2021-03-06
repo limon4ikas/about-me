@@ -6,9 +6,7 @@ const Container = styled.article`
   grid-template-areas: 'photo content';
   gap: 2rem;
 
-  margin: 2rem 0;
-
-  @media only screen and (max-width: 46.875em) {
+  @media only screen and (max-width: 37.5em) {
     grid-template-areas: 'photo' 'content';
   }
 `;
@@ -16,8 +14,12 @@ const Container = styled.article`
 const Photo = styled.img`
   grid-area: photo;
   border-radius: 1rem;
-  max-width: 25rem;
-  max-height: 25rem;
+  max-width: 20rem;
+  max-height: 20rem;
+  object-fit: cover;
+
+  @media only screen and (max-width: 46.875em) {
+  }
 `;
 
 const ContentBox = styled.div`

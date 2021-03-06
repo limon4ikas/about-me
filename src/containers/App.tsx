@@ -16,6 +16,12 @@ const Container = styled.div`
 
   background-color: #1f1f2f;
 
+  /* display: grid;
+  grid-template-columns: minmax(6rem, 1fr) repeat(
+      10,
+      minmax(min-content, 14rem)
+    ) minmax(6rem, 1fr); */
+
   @media only screen and (max-width: 75em) {
     border-radius: 0;
     margin: 0;

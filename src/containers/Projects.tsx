@@ -19,10 +19,10 @@ const CardsContainer = styled.div`
   gap: 2rem;
   grid-template-rows: 1fr;
 
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 `;
 
-const Heading = styled.h2``;
+const SectionName = styled.h2``;
 
 const LearnMore = styled.button`
   border: none;
@@ -41,18 +41,17 @@ const LearnMore = styled.button`
   &:hover {
     color: #fff;
   }
-
-  &span {
-  }
 `;
 
 const Projects: FunctionComponent = () => {
   return (
     <Container>
       <SectionNameContainer>
-        <Heading>Projects</Heading>
+        <SectionName>Projects</SectionName>
         <LearnMore>
-          Learn more <span>&#8594;</span>
+          <a href="https://github.com/limon4ikas">
+            Learn more <span>&#8594;</span>
+          </a>
         </LearnMore>
       </SectionNameContainer>
 

@@ -24,7 +24,9 @@ const Container = styled.div`
   }
 `;
 
-const Name = styled.h3``;
+const Name = styled.h3`
+  color: #81f59b;
+`;
 
 const Description = styled.p``;
 

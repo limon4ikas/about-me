@@ -40,6 +40,7 @@ const Button = styled.button`
   border-radius: 1rem;
   color: #fff;
   text-align: center;
+  cursor: pointer;
 
   padding: 1rem 1.6rem;
 
@@ -49,8 +50,6 @@ const Button = styled.button`
     background-color: #448fff;
   }
 `;
-
-// background-color: #217aff;
 
 const Contact: FunctionComponent = () => {
   return (

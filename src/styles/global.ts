@@ -17,7 +17,13 @@ html {
 body {
     background-color: #181827;
     color: #fff;
-    height: 100vh;
     font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    font-weight: 300;
 }
 `;
+
+/* ========== BREAKPOINTS ========== */
+
+// 1200px
+// 750px
