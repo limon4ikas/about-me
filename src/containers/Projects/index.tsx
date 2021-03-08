@@ -37,7 +37,24 @@ const Projects: FunctionComponent = () => {
   if (!repos) return <h1>Loading...</h1>;
 
   const renderRepos = repos.map((repo: Repo) => {
-    return <ProjectCard repo={repo} key={repo.id} />;
+    const calcColor = (language: string) => {
+      console.log(language);
+      switch (language) {
+        case 'TypeScript':
+          return '#2b7489';
+        case 'JavaScript':
+          return '#f1e05a';
+        case 'HTML':
+          return '#e34c26';
+        case 'CSS':
+          return '#563d7c';
+        default:
+          return '#fff';
+      }
+    };
+    return (
+      <ProjectCard repo={repo} key={repo.id} color={calcColor(repo.language)} />
+    );
   });
 
   return (

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { AiOutlineStar } from 'react-icons/ai';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect } from 'react';
 import { device } from '../styles/responsive';
 import { Repo } from '../containers/Projects';
 import Link from '../components/Link';
+import { useRef } from 'react';
 
 const Container = styled.div`
   position: relative;
@@ -22,7 +23,7 @@ const Container = styled.div`
     position: absolute;
     display: block;
     content: '';
-    background-color: #81f59b;
+    background-color: ${({ color }) => color};
     height: 100%;
     width: 5px;
     left: 0rem;
@@ -36,7 +37,7 @@ const Container = styled.div`
 `;
 
 const Name = styled.h3`
-  color: #81f59b;
+  color: ${({ color }) => color};
   transition: all 0.2s;
   font-weight: 400;
 
@@ -65,24 +66,27 @@ const Stars = styled.p`
   color: #b2e2ff;
 `;
 
-const languageColors = {};
-
 interface ProjectCardsProps {
   repo: Repo;
+  color: string;
 }
 
-const ProjectCard: FunctionComponent<ProjectCardsProps> = ({ repo }) => {
+const ProjectCard: FunctionComponent<ProjectCardsProps> = ({
+  repo: { name, description, language, html_url, stargazers_count },
+  color,
+}) => {
+  console.log(color);
   return (
-    <Container>
-      <Link goTo={repo.html_url}>
-        <Name>{repo.name}</Name>
+    <Container color={color}>
+      <Link goTo={html_url}>
+        <Name color={color}>{name}</Name>
       </Link>
-      <Description>{repo.description}</Description>
+      <Description>{description}</Description>
       <TagsBox>
-        <Language>{repo.language}</Language>
+        <Language>{language}</Language>
         <Stars>
           <AiOutlineStar />
-          {repo.stargazers_count}
+          {stargazers_count}
         </Stars>
       </TagsBox>
     </Container>
