@@ -1,7 +1,41 @@
 import styled from 'styled-components';
 import { device } from '../../styles/responsive';
 
-export const Container = styled.div`
+export enum Languages {
+  TypeScript = 'TypeScript',
+  JavaScript = 'JavaScript',
+  HTML = 'HTML',
+  CSS = 'CSS',
+}
+
+export enum LanguagesColors {
+  TypeScript = '#3A7BCC',
+  JavaScript = '#f1e05a',
+  HTML = '#e34c26',
+  CSS = '#563d7c',
+  defaultWhite = '#fff',
+}
+
+export const calcColor = (language: Languages): LanguagesColors => {
+  switch (language) {
+    case Languages.TypeScript:
+      return LanguagesColors.TypeScript;
+    case Languages.JavaScript:
+      return LanguagesColors.JavaScript;
+    case Languages.HTML:
+      return LanguagesColors.HTML;
+    case Languages.CSS:
+      return LanguagesColors.CSS;
+    default:
+      return LanguagesColors.defaultWhite;
+  }
+};
+
+interface cardStyleProps {
+  language: Languages;
+}
+
+export const Container = styled.div<cardStyleProps>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -18,7 +52,7 @@ export const Container = styled.div`
     position: absolute;
     display: block;
     content: '';
-    background-color: ${({ color }) => color};
+    background-color: ${({ language }) => calcColor(language)};
     height: 100%;
     width: 5px;
     left: 0rem;
@@ -31,8 +65,8 @@ export const Container = styled.div`
   }
 `;
 
-export const Name = styled.h3`
-  color: ${({ color }) => color};
+export const Name = styled.h3<cardStyleProps>`
+  color: ${({ language }) => calcColor(language)};
   transition: all 0.2s;
   font-weight: 400;
 

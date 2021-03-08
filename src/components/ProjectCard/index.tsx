@@ -13,17 +13,15 @@ import {
 
 interface ProjectCardsProps {
   repo: Repo;
-  color: string;
 }
 
 const ProjectCard: FunctionComponent<ProjectCardsProps> = ({
   repo: { name, description, language, html_url, stargazers_count },
-  color,
 }) => {
   return (
-    <Container color={color}>
+    <Container language={language}>
       <Link goTo={html_url}>
-        <Name color={color}>{name}</Name>
+        <Name language={language}>{name}</Name>
       </Link>
       <Description>{description}</Description>
       <TagsBox>
