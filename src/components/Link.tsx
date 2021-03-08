@@ -6,6 +6,8 @@ const StyledLink = styled.a`
   &:visited {
     text-decoration: none;
     color: currentColor;
+    display: flex;
+    align-items: center;
   }
 `;
 

@@ -3,6 +3,7 @@ import { AiFillInstagram } from 'react-icons/ai';
 import { AiFillTwitterSquare } from 'react-icons/ai';
 import { AiFillGithub } from 'react-icons/ai';
 import myPhoto from '../../assets/img/profile-photo.png';
+import Link from '../../components/Link';
 import {
   Container,
   AboutMeContentBox,
@@ -36,7 +37,9 @@ const AboutMe: FunctionComponent = () => {
           <FollowMeText>Follow me</FollowMeText>
 
           <SocialIconBox>
-            <AiFillInstagram />
+            <Link goTo="#">
+              <AiFillInstagram />
+            </Link>
           </SocialIconBox>
           <SocialIconBox>
             <AiFillTwitterSquare />

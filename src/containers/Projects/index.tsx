@@ -17,7 +17,6 @@ export interface Repo {
 
 const Projects: FunctionComponent = () => {
   const [repos, setRepos] = useState<Repo[] | null>(null);
-  console.log(repos);
 
   useEffect(() => {
     const getProjects = async () => {
@@ -36,18 +35,31 @@ const Projects: FunctionComponent = () => {
 
   if (!repos) return <h1>Loading...</h1>;
 
+  enum Languages {
+    TypeScript = 'TypeScript',
+    JavaScript = 'JavaScript',
+    HTML = 'HTML',
+    CSS = 'CSS',
+  }
+
+  enum LanguagesColors {
+    TypeScript = '#2b7489',
+    JavaScript = '#f1e05a',
+    HTML = '#e34c26',
+    CSS = '#563d7c',
+  }
+
   const renderRepos = repos.map((repo: Repo) => {
     const calcColor = (language: string) => {
-      console.log(language);
       switch (language) {
-        case 'TypeScript':
-          return '#2b7489';
-        case 'JavaScript':
-          return '#f1e05a';
-        case 'HTML':
-          return '#e34c26';
-        case 'CSS':
-          return '#563d7c';
+        case Languages.TypeScript:
+          return LanguagesColors.TypeScript;
+        case Languages.JavaScript:
+          return LanguagesColors.JavaScript;
+        case Languages.HTML:
+          return LanguagesColors.HTML;
+        case Languages.CSS:
+          return LanguagesColors.CSS;
         default:
           return '#fff';
       }

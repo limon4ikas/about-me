@@ -1,10 +1,9 @@
+import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { AiOutlineStar } from 'react-icons/ai';
-import { FunctionComponent, useEffect } from 'react';
 import { device } from '../styles/responsive';
 import { Repo } from '../containers/Projects';
 import Link from '../components/Link';
-import { useRef } from 'react';
 
 const Container = styled.div`
   position: relative;
