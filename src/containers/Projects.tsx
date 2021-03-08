@@ -19,6 +19,7 @@ const SectionNameContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  padding: 0 2rem;
 `;
 
 const CardsContainer = styled.div`
@@ -27,10 +28,6 @@ const CardsContainer = styled.div`
   grid-template-rows: 1fr;
 
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-`;
-
-const SectionName = styled.h2`
-  font-weight: 300;
 `;
 
 const Projects: FunctionComponent = () => {
