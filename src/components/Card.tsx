@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { AiOutlineStar } from 'react-icons/ai';
+import { FunctionComponent } from 'react';
 
 const Container = styled.div`
   position: relative;
@@ -53,7 +54,7 @@ const Stars = styled.p`
   color: #b2e2ff;
 `;
 
-const Card = () => {
+const Card: FunctionComponent = () => {
   return (
     <Container>
       <Name>Drain.js</Name>
