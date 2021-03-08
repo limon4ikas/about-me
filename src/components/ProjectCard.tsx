@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { AiOutlineStar } from 'react-icons/ai';
 import { FunctionComponent } from 'react';
 import { device } from '../styles/responsive';
+import { Repo } from '../containers/Projects';
+import Link from '../components/Link';
 
 const Container = styled.div`
   position: relative;
@@ -35,6 +37,11 @@ const Container = styled.div`
 
 const Name = styled.h3`
   color: #81f59b;
+  transition: all 0.2s;
+
+  &:hover {
+    color: #fff;
+  }
 `;
 
 const Description = styled.p``;
@@ -57,23 +64,28 @@ const Stars = styled.p`
   color: #b2e2ff;
 `;
 
-const Card: FunctionComponent = () => {
+const languageColors = {};
+
+interface ProjectCardsProps {
+  repo: Repo;
+}
+
+const ProjectCard: FunctionComponent<ProjectCardsProps> = ({ repo }) => {
   return (
     <Container>
-      <Name>Drain.js</Name>
-      <Description>
-        It allows you to simply view the icons in the selection.json file
-        provided by Icomoon. bla bla bla
-      </Description>
+      <Link goTo={repo.html_url}>
+        <Name>{repo.name}</Name>
+      </Link>
+      <Description>{repo.description}</Description>
       <TagsBox>
-        <Language>Javascript</Language>
+        <Language>{repo.language}</Language>
         <Stars>
           <AiOutlineStar />
-          32
+          {repo.stargazers_count}
         </Stars>
       </TagsBox>
     </Container>
   );
 };
 
-export default Card;
+export default ProjectCard;

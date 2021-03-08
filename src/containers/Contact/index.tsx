@@ -1,6 +1,12 @@
 import { FunctionComponent } from 'react';
-import Button from '../../components/Button';
-import { Container, Content, Heading, Text, ButtonsBox } from './styles';
+import {
+  Container,
+  Content,
+  Heading,
+  Text,
+  ButtonsBox,
+  Button,
+} from './styles';
 
 const Contact: FunctionComponent = () => {
   return (

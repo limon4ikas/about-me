@@ -14,7 +14,6 @@ const App: FunctionComponent = () => {
     id: string
   ) => {
     e.preventDefault();
-    console.log(e);
 
     const goToElement = document.getElementById(`${id}`);
     if (!goToElement) return;
