@@ -6,9 +6,6 @@ import Button from '../../components/Button';
 import Link from '../../components/Link';
 import { Container, SectionNameContainer, CardsContainer } from './styles';
 
-// /users/limon4ikas/repos GET LIST OF REPOS
-// /repos/limon4ikas/nexter' GET REPO
-
 export interface Repo {
   id: number;
   name: string;
@@ -37,7 +34,7 @@ const Projects: FunctionComponent = () => {
     getProjects();
   }, [repos]);
 
-  if (!repos) return <h1>No Repos Found</h1>;
+  if (!repos) return <h1>Loading...</h1>;
 
   const renderRepos = repos.map((repo: Repo) => {
     return <ProjectCard repo={repo} key={repo.id} />;

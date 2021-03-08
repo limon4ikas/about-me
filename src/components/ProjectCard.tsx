@@ -38,6 +38,7 @@ const Container = styled.div`
 const Name = styled.h3`
   color: #81f59b;
   transition: all 0.2s;
+  font-weight: 400;
 
   &:hover {
     color: #fff;
