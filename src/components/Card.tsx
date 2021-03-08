@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { AiOutlineStar } from 'react-icons/ai';
 import { FunctionComponent } from 'react';
+import { device } from '../styles/responsive';
 
 const Container = styled.div`
   position: relative;
@@ -8,7 +9,9 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
+
   padding: 2rem 2rem;
+
   background-color: #2a2c3c;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
@@ -24,7 +27,7 @@ const Container = styled.div`
     top: 0rem;
   }
 
-  @media only screen and (max-width: 31.25em) {
+  @media ${device.mobileL} {
     border-top-right-radius: 0rem;
     border-bottom-right-radius: 0rem;
   }

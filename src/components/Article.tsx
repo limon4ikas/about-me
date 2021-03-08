@@ -2,13 +2,14 @@ import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import Button from '../components/Button';
 import Link from '../components/Link';
+import { device } from '../styles/responsive';
 
 const Container = styled.article`
   display: grid;
   grid-template-areas: 'photo content';
   gap: 2rem;
 
-  @media only screen and (max-width: 37.5em) {
+  @media ${device.tablet} {
     grid-template-areas:
       'photo'
       'content';
@@ -20,13 +21,15 @@ const Container = styled.article`
 
 const Photo = styled.img`
   grid-area: photo;
-  border-radius: 1rem;
+
   max-width: 20rem;
   max-height: 20rem;
   object-fit: cover;
   align-self: center;
 
-  @media only screen and (max-width: 37.5em) {
+  border-radius: 1rem;
+
+  @media ${device.tablet} {
     max-width: 100%;
   }
 `;
