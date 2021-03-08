@@ -22,6 +22,11 @@ const Container = styled.div`
     left: 0rem;
     top: 0rem;
   }
+
+  @media only screen and (max-width: 31.25em) {
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+  }
 `;
 
 const Name = styled.h3`

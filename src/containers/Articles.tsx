@@ -9,6 +9,10 @@ import article3 from '../assets/img/article-3.jpg';
 const Container = styled.section`
   margin-top: 8rem;
   padding: 0 4rem;
+
+  @media only screen and (max-width: 31.25em) {
+    padding: 0 2rem;
+  }
 `;
 
 const ArticlesBox = styled.div`

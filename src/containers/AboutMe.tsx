@@ -7,11 +7,16 @@ import { FunctionComponent } from 'react';
 
 const Container = styled.section`
   padding: 0 4rem;
-  height: 100vh;
+  height: 60vh;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media only screen and (max-width: 31.25em) {
+    height: auto;
+    padding: 0 2rem;
+  }
 `;
 
 const AboutMeContentBox = styled.div`
@@ -19,24 +24,43 @@ const AboutMeContentBox = styled.div`
   flex-direction: column;
   gap: 2rem;
   width: 50%;
+  @media only screen and (max-width: 31.25em) {
+    flex-grow: 1;
+  }
 `;
 
 const HeadingBox = styled.h1`
   display: flex;
   flex-direction: column;
   font-weight: 300;
+
+  @media only screen and (max-width: 31.25em) {
+    font-size: 1.6rem;
+  }
 `;
 
 const HeadingTop = styled.span`
   font-size: 4rem;
+
+  @media only screen and (max-width: 31.25em) {
+    font-size: 3rem;
+  }
 `;
 
 const HeadingBottom = styled.span`
   font-size: 4rem;
   color: #448fff;
+
+  @media only screen and (max-width: 31.25em) {
+    font-size: 3rem;
+  }
 `;
 
-const PhotoBox = styled.div``;
+const PhotoBox = styled.div`
+  @media only screen and (max-width: 31.25em) {
+    display: none;
+  }
+`;
 
 const Photo = styled.img`
   height: 100%;
@@ -52,6 +76,10 @@ const Photo = styled.img`
 
 const Text = styled.p`
   font-size: 2rem;
+
+  @media only screen and (max-width: 31.25em) {
+    font-size: 1.6rem;
+  }
 `;
 
 const SocialBox = styled.div`
@@ -65,6 +93,10 @@ const FollowMeText = styled.p`
   width: 100%;
   font-size: 1.6rem;
   color: #4e5169;
+
+  @media only screen and (max-width: 31.25em) {
+    font-size: 1.4rem;
+  }
 `;
 
 const SocialIconBox = styled.div`

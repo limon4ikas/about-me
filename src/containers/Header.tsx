@@ -10,6 +10,12 @@ const Container = styled.header`
   height: 10rem;
 
   font-size: 2rem;
+
+  @media only screen and (max-width: 31.25em) {
+    padding: 0 2rem;
+
+    font-size: 1.6rem;
+  }
 `;
 
 const LogoBox = styled.div`

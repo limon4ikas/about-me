@@ -26,6 +26,10 @@ const Container = styled.div`
     border-radius: 0;
     margin: 0;
   }
+
+  @media only screen and (max-width: 31.25em) {
+    font-size: 1.4rem;
+  }
 `;
 
 const App: FunctionComponent = () => {

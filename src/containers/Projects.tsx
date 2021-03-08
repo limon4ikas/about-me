@@ -8,6 +8,10 @@ import Link from '../components/Link';
 const Container = styled.section`
   margin-top: 8rem;
   padding: 0 4rem;
+
+  @media only screen and (max-width: 31.25em) {
+    padding: 0;
+  }
 `;
 
 const SectionNameContainer = styled.div`

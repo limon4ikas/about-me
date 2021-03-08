@@ -6,6 +6,10 @@ import { AiFillGithub } from 'react-icons/ai';
 const Container = styled.section`
   padding: 0 4rem;
   padding: 4rem;
+
+  @media only screen and (max-width: 31.25em) {
+    padding: 2rem;
+  }
 `;
 
 const Content = styled.div`

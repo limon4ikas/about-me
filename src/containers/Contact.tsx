@@ -10,6 +10,11 @@ const Container = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 31.25em) {
+    padding: 0 2rem;
+    height: 40vh;
+  }
 `;
 
 const Content = styled.div`
