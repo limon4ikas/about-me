@@ -19,7 +19,10 @@ const SectionNameContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
-  padding: 0 2rem;
+
+  @media only screen and (max-width: 31.25em) {
+    padding: 0 2rem;
+  }
 `;
 
 const CardsContainer = styled.div`
