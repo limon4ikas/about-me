@@ -58,7 +58,7 @@ const Button = styled.button`
 
 const Contact: FunctionComponent = () => {
   return (
-    <Container>
+    <Container id="contact">
       <Content>
         <Heading>Let's meet</Heading>
         <Text>

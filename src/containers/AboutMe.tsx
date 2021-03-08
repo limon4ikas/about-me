@@ -112,7 +112,7 @@ const SocialIconBox = styled.div`
 
 const AboutMe: FunctionComponent = () => {
   return (
-    <Container>
+    <Container id="about">
       <AboutMeContentBox>
         <HeadingBox>
           <HeadingTop>Hi, I am Cat,</HeadingTop>

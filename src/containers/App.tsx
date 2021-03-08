@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, SyntheticEvent } from 'react';
 import styled from 'styled-components';
 import { GlobalStyles } from '../styles/global';
 import Header from './Header';
@@ -16,12 +16,6 @@ const Container = styled.div`
 
   background-color: #1f1f2f;
 
-  /* display: grid;
-  grid-template-columns: minmax(6rem, 1fr) repeat(
-      10,
-      minmax(min-content, 14rem)
-    ) minmax(6rem, 1fr); */
-
   @media only screen and (max-width: 87.5em) {
     border-radius: 0;
     margin: 0;
@@ -33,10 +27,23 @@ const Container = styled.div`
 `;
 
 const App: FunctionComponent = () => {
+  const handleNavClick = (
+    e: SyntheticEvent<HTMLAnchorElement, MouseEvent>,
+    id: string
+  ) => {
+    e.preventDefault();
+    console.log(e);
+
+    const goToElement = document.getElementById(`${id}`);
+    if (!goToElement) return;
+
+    goToElement.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <Container>
       <GlobalStyles />
-      <Header />
+      <Header handleNavClick={handleNavClick} />
       <AboutMe />
       <Projects />
       <Articles />

@@ -27,7 +27,7 @@ const ArticlesBox = styled.div`
 
 const Articles: FunctionComponent = () => {
   return (
-    <Container>
+    <Container id="articles">
       <SectionHeading text="Articles" />
       <ArticlesBox>
         <Article imgSrc={article1} />

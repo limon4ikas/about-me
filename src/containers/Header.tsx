@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { AiOutlineCodeSandbox } from 'react-icons/ai';
+import { FunctionComponent } from 'react';
 
 const Container = styled.header`
   display: flex;
@@ -56,7 +57,11 @@ const NavLink = styled.a`
   }
 `;
 
-const Header = () => {
+interface HeaderProps {
+  handleNavClick: Function;
+}
+
+const Header: FunctionComponent<HeaderProps> = ({ handleNavClick }) => {
   return (
     <Container>
       <LogoBox>
@@ -65,13 +70,25 @@ const Header = () => {
       <NavBox>
         <NavList>
           <NavItem>
-            <NavLink href="#">About</NavLink>
+            <NavLink href="#about" onClick={(e) => handleNavClick(e, 'about')}>
+              About
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Articles</NavLink>
+            <NavLink
+              href="#articles"
+              onClick={(e) => handleNavClick(e, 'articles')}
+            >
+              Articles
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Contact</NavLink>
+            <NavLink
+              href="#contact"
+              onClick={(e) => handleNavClick(e, 'contact')}
+            >
+              Contact
+            </NavLink>
           </NavItem>
         </NavList>
       </NavBox>
