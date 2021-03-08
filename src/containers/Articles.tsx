@@ -1,4 +1,6 @@
+import { FunctionComponent } from 'react';
 import styled from 'styled-components';
+import SectionHeading from '../components/SectionHeading';
 import Article from '../components/Article';
 import article1 from '../assets/img/article-1.jpg';
 import article2 from '../assets/img/article-2.jpg';
@@ -9,11 +11,8 @@ const Container = styled.section`
   padding: 0 4rem;
 `;
 
-const SectionName = styled.h2`
-  margin-bottom: 2rem;
-`;
-
 const ArticlesBox = styled.div`
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
 
@@ -22,10 +21,10 @@ const ArticlesBox = styled.div`
   }
 `;
 
-const Articles = () => {
+const Articles: FunctionComponent = () => {
   return (
     <Container>
-      <SectionName>Articles</SectionName>
+      <SectionHeading text="Articles" />
       <ArticlesBox>
         <Article imgSrc={article1} />
         <Article imgSrc={article2} />

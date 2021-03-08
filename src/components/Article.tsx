@@ -1,5 +1,7 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
+import Button from '../components/Button';
+import Link from '../components/Link';
 
 const Container = styled.article`
   display: grid;
@@ -7,7 +9,12 @@ const Container = styled.article`
   gap: 2rem;
 
   @media only screen and (max-width: 37.5em) {
-    grid-template-areas: 'photo' 'content';
+    grid-template-areas:
+      'photo'
+      'content';
+
+    align-items: center;
+    justify-items: center;
   }
 `;
 
@@ -17,8 +24,10 @@ const Photo = styled.img`
   max-width: 20rem;
   max-height: 20rem;
   object-fit: cover;
+  align-self: center;
 
-  @media only screen and (max-width: 46.875em) {
+  @media only screen and (max-width: 37.5em) {
+    max-width: 100%;
   }
 `;
 
@@ -27,7 +36,8 @@ const ContentBox = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 2rem;
 `;
 
 const HeadingBox = styled.div`
@@ -38,6 +48,7 @@ const HeadingBox = styled.div`
 
 const Heading = styled.h3`
   color: #b2e2ff;
+  font-weight: 300;
 `;
 
 const Date = styled.p`
@@ -46,28 +57,10 @@ const Date = styled.p`
 
 const Text = styled.p``;
 
-const Button = styled.button`
-  border: none;
-  outline: none;
-  text-decoration: none;
-  font-family: inherit;
-  background: transparent;
-  color: currentColor;
-  font-size: inherit;
-  display: inline-block;
+const LinkBox = styled.div`
   align-self: flex-start;
-  cursor: pointer;
-
-  color: #b2e2ff;
-  transition: all 0.2s;
-
-  &:hover {
-    color: #fff;
-  }
-
-  &span {
-  }
 `;
+
 interface ArticleProps {
   imgSrc: string;
 }
@@ -87,9 +80,13 @@ const Article: FunctionComponent<ArticleProps> = ({ imgSrc }) => {
           dolores quasi recusandae perferendis veritatis assumenda non. Eligendi
           ab velit aspernatur recusandae.
         </Text>
-        <Button>
-          Read more <span>&#8594;</span>
-        </Button>
+        <LinkBox>
+          <Button>
+            <Link goTo="#">
+              Read more <span>&#8594;</span>
+            </Link>
+          </Button>
+        </LinkBox>
       </ContentBox>
     </Container>
   );

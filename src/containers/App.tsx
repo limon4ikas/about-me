@@ -9,7 +9,7 @@ import Articles from './Articles';
 import Contact from './Contact';
 
 const Container = styled.div`
-  max-width: 120rem;
+  max-width: 140rem;
   margin: 8rem auto;
   font-size: 1.6rem;
   border-radius: 2rem;
@@ -22,7 +22,7 @@ const Container = styled.div`
       minmax(min-content, 14rem)
     ) minmax(6rem, 1fr); */
 
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 87.5em) {
     border-radius: 0;
     margin: 0;
   }
