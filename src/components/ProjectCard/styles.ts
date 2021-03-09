@@ -51,7 +51,7 @@ export const Container = styled.div<cardStyleProps>`
   transition: all 0.2s ease-out;
 
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-4px);
     box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
   }
 

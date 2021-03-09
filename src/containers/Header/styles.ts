@@ -56,8 +56,8 @@ export const NavLink = styled.a`
   &:visited {
     text-decoration: none;
     color: currentColor;
-    border-bottom: 0px solid #448fff;
-    transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.12s ease-out;
   }
 
   &:link:hover,

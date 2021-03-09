@@ -1,5 +1,4 @@
 import { FunctionComponent, SyntheticEvent } from 'react';
-import { handleNavFunction } from '../App';
 import {
   Container,
   LogoBox,
@@ -10,11 +9,19 @@ import {
   NavLink,
 } from './styles';
 
-interface HeaderProps {
-  handleNavClick: handleNavFunction;
-}
+const Header: FunctionComponent = () => {
+  const handleNavClick = (
+    e: SyntheticEvent<HTMLAnchorElement, MouseEvent>,
+    id: string
+  ): void => {
+    e.preventDefault();
 
-const Header: FunctionComponent<HeaderProps> = ({ handleNavClick }) => {
+    const goToElement = document.getElementById(`${id}`);
+    if (!goToElement) return;
+
+    goToElement.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <Container>
       <LogoBox>
