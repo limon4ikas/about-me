@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import { device } from '../../styles/responsive';
 
 export const Container = styled.header`
+  position: sticky;
+  top: 0;
+  background-color: #1f1f2f;
+  z-index: 999;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,6 +17,10 @@ export const Container = styled.header`
   height: 10rem;
   padding: 0 4rem;
   font-size: 2rem;
+
+  @media ${device.tablet} {
+    border-radius: 0;
+  }
 
   @media ${device.mobileL} {
     padding: 0 2rem;

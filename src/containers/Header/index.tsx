@@ -1,4 +1,5 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, SyntheticEvent } from 'react';
+import { handleNavFunction } from '../App';
 import {
   Container,
   LogoBox,
@@ -10,7 +11,7 @@ import {
 } from './styles';
 
 interface HeaderProps {
-  handleNavClick: Function;
+  handleNavClick: handleNavFunction;
 }
 
 const Header: FunctionComponent<HeaderProps> = ({ handleNavClick }) => {

@@ -8,11 +8,13 @@ import Articles from './Articles';
 import Contact from './Contact';
 import { Container } from './styles';
 
+export type handleNavFunction = (
+  e: SyntheticEvent<HTMLAnchorElement, MouseEvent>,
+  id: string
+) => void;
+
 const App: FunctionComponent = () => {
-  const handleNavClick = (
-    e: SyntheticEvent<HTMLAnchorElement, MouseEvent>,
-    id: string
-  ) => {
+  const handleNavClick: handleNavFunction = (e, id) => {
     e.preventDefault();
 
     const goToElement = document.getElementById(`${id}`);

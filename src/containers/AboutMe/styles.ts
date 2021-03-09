@@ -5,13 +5,18 @@ export const Container = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   height: 60vh;
+
   padding: 0 4rem;
 
-  @media ${device.mobileL} {
-    height: auto;
+  @media ${device.tablet} {
     padding: 0 2rem;
+    height: auto;
+  }
+
+  @media ${device.mobileL} {
+    padding: 0 2rem;
+    height: 60vh;
   }
 `;
 

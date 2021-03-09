@@ -1,8 +1,8 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { AiFillInstagram } from 'react-icons/ai';
 import { AiFillTwitterSquare } from 'react-icons/ai';
 import { AiFillGithub } from 'react-icons/ai';
-import myPhoto from '../../assets/img/profile-photo.png';
+import github from '../../api/github';
 import Link from '../../components/Link';
 import {
   Container,
@@ -19,6 +19,20 @@ import {
 } from './styles';
 
 const AboutMe: FunctionComponent = () => {
+  const [photoUrl, setPhotoUrl] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    const getPhoto = async () => {
+      const {
+        data: { avatar_url: avatarUrl },
+      } = await github.get('/users/limon4ikas');
+
+      setPhotoUrl(avatarUrl);
+    };
+
+    getPhoto();
+  });
+
   return (
     <Container id="about">
       <AboutMeContentBox>
@@ -51,7 +65,7 @@ const AboutMe: FunctionComponent = () => {
       </AboutMeContentBox>
 
       <PhotoBox>
-        <Photo src={myPhoto} alt="My Photo" />
+        <Photo src={photoUrl} alt="My Photo" />
       </PhotoBox>
     </Container>
   );

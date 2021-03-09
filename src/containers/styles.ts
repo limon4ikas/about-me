@@ -3,10 +3,9 @@ import { device } from '../styles/responsive';
 
 export const Container = styled.div`
   max-width: 140rem;
-  margin: 8rem auto;
+  margin: 0 auto;
   font-size: 1.6rem;
 
-  border-radius: 2rem;
   background-color: #1f1f2f;
 
   @media ${device.laptopL} {

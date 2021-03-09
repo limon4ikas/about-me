@@ -48,6 +48,13 @@ export const Container = styled.div<cardStyleProps>`
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
 
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+  }
+
   &::before {
     position: absolute;
     display: block;
