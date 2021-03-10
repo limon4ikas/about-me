@@ -82,6 +82,4 @@ const Projects: FunctionComponent = () => {
   );
 };
 
-<span></span>;
-
 export default Projects;

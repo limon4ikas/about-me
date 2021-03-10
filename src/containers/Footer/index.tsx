@@ -1,30 +1,12 @@
-import { AiFillInstagram } from 'react-icons/ai';
-import { AiFillTwitterSquare } from 'react-icons/ai';
-import { AiFillGithub } from 'react-icons/ai';
-import {
-  Container,
-  Content,
-  FollowMe,
-  SocialBox,
-  SocialIconBox,
-} from './styles';
+import { FunctionComponent } from 'react';
+import SocialIconsBox from '../../components/SocialIconsBox';
+import { Container, Content } from './styles';
 
-const Footer = () => {
+const Footer: FunctionComponent = () => {
   return (
     <Container>
       <Content>
-        <FollowMe>Follow me</FollowMe>
-        <SocialBox>
-          <SocialIconBox>
-            <AiFillInstagram />
-          </SocialIconBox>
-          <SocialIconBox>
-            <AiFillTwitterSquare />
-          </SocialIconBox>
-          <SocialIconBox>
-            <AiFillGithub />
-          </SocialIconBox>
-        </SocialBox>
+        <SocialIconsBox />
       </Content>
     </Container>
   );

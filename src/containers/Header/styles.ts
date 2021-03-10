@@ -44,12 +44,15 @@ export const NavBox = styled.nav``;
 
 export const NavList = styled.ul`
   list-style: none;
-
   display: flex;
-  gap: 2rem;
 `;
 
-export const NavItem = styled.li``;
+// ???
+export const NavItem = styled.li`
+  &:not(:last-child) {
+    margin-right: 2rem;
+  }
+`;
 
 export const NavLink = styled.a`
   &:link,

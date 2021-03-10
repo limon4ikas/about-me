@@ -71,7 +71,7 @@ export const Photo = styled.img`
   border-radius: 50%;
   border: 1rem solid #2a2c3c;
 
-  @media only screen and (max-width: 31.25) {
+  @media ${device.mobileL} {
     display: none;
   }
 `;
@@ -86,9 +86,10 @@ export const Text = styled.p`
 
 export const SocialBox = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
   gap: 0.5rem;
-  flex-wrap: wrap;
 `;
 
 export const FollowMeText = styled.p`

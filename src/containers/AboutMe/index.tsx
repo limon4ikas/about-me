@@ -1,9 +1,6 @@
 import { FunctionComponent, useEffect, useState } from 'react';
-import { AiFillInstagram } from 'react-icons/ai';
-import { AiFillTwitterSquare } from 'react-icons/ai';
-import { AiFillGithub } from 'react-icons/ai';
 import github from '../../api/github';
-import Link from '../../components/Link';
+import SocialIconsBox from '../../components/SocialIconsBox';
 import {
   Container,
   AboutMeContentBox,
@@ -12,8 +9,6 @@ import {
   HeadingBottom,
   Text,
   SocialBox,
-  FollowMeText,
-  SocialIconBox,
   PhotoBox,
   Photo,
 } from './styles';
@@ -48,19 +43,7 @@ const AboutMe: FunctionComponent = () => {
         </Text>
 
         <SocialBox>
-          <FollowMeText>Follow me</FollowMeText>
-
-          <SocialIconBox>
-            <Link goTo="#">
-              <AiFillInstagram />
-            </Link>
-          </SocialIconBox>
-          <SocialIconBox>
-            <AiFillTwitterSquare />
-          </SocialIconBox>
-          <SocialIconBox>
-            <AiFillGithub />
-          </SocialIconBox>
+          <SocialIconsBox />
         </SocialBox>
       </AboutMeContentBox>
 
