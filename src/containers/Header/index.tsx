@@ -9,10 +9,12 @@ import {
   NavLink,
 } from './styles';
 
+type SectionName = 'about' | 'articles' | 'contact';
+
 const Header: FunctionComponent = () => {
   const handleNavClick = (
     e: SyntheticEvent<HTMLAnchorElement, MouseEvent>,
-    id: string
+    id: SectionName
   ): void => {
     e.preventDefault();
     const goToElement = document.getElementById(`${id}`);
