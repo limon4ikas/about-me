@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { device } from '../styles/responsive';
 
 export const Container = styled.div`
+  position: relative;
   max-width: 140rem;
   margin: 0 auto;
   font-size: 1.6rem;

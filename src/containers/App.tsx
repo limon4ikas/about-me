@@ -10,7 +10,7 @@ import { Container } from './styles';
 
 const App: FunctionComponent = () => {
   return (
-    <Container>
+    <Container id="app-container">
       <GlobalStyles />
       <Header />
       <AboutMe />
