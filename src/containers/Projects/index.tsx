@@ -4,7 +4,12 @@ import SectionHeading from '../../components/SectionHeading';
 import ProjectCard from '../../components/ProjectCard';
 import Button from '../../components/Button';
 import Link from '../../components/Link';
-import { Container, SectionNameContainer, CardsContainer } from './styles';
+import {
+  Container,
+  SectionNameContainer,
+  CardsContainer,
+  ProjectCardPlaceholder,
+} from './styles';
 import { Languages } from '../../components/ProjectCard/styles';
 
 export interface Repo {
@@ -22,19 +27,40 @@ const Projects: FunctionComponent = () => {
   useEffect(() => {
     const getProjects = async () => {
       try {
-        if (repos) return;
-
-        const { data } = await github.get('/users/limon4ikas/repos');
+        const { data } = await github.get<Repo[]>('/users/limon4ikas/repos');
         setRepos(data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
 
     getProjects();
-  }, [repos]);
+  }, []);
 
-  if (!repos) return <h1>Loading...</h1>;
+  if (!repos)
+    return (
+      <Container>
+        <SectionNameContainer>
+          <SectionHeading>Projects</SectionHeading>
+          <Button>
+            <Link goTo="https://github.com/limon4ikas">
+              Learn more <span>&#8594;</span>
+            </Link>
+          </Button>
+        </SectionNameContainer>
+
+        <CardsContainer>
+          <ProjectCardPlaceholder />
+          <ProjectCardPlaceholder />
+          <ProjectCardPlaceholder />
+          <ProjectCardPlaceholder />
+          <ProjectCardPlaceholder />
+          <ProjectCardPlaceholder />
+          <ProjectCardPlaceholder />
+          <ProjectCardPlaceholder />
+        </CardsContainer>
+      </Container>
+    );
 
   const renderRepos = repos.map((repo: Repo) => {
     return <ProjectCard repo={repo} key={repo.id} />;
