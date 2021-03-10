@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { AiFillInstagram } from 'react-icons/ai';
 import { AiFillTwitterSquare } from 'react-icons/ai';
 import { AiFillGithub } from 'react-icons/ai';
+import Link from './Link';
 
 export const FollowMe = styled.div`
   color: #4e5169;
@@ -26,19 +27,43 @@ export const SocialIconBox = styled.div`
   }
 `;
 
+const InstagramIcon = styled(AiFillInstagram)`
+  &:hover {
+    fill: #d6249f;
+  }
+`;
+
+const TwitterIcon = styled(AiFillTwitterSquare)`
+  &:hover {
+    fill: #00acee;
+  }
+`;
+
+const GitHubIcon = styled(AiFillGithub)`
+  &:hover {
+    fill: #f9826c;
+  }
+`;
+
 const SocialIconsBox: FunctionComponent = () => {
   return (
     <>
       <FollowMe>Follow me</FollowMe>
       <SocialBox>
         <SocialIconBox>
-          <AiFillInstagram />
+          <Link goTo="https://www.instagram.com/limon4ikas/">
+            <InstagramIcon />
+          </Link>
         </SocialIconBox>
         <SocialIconBox>
-          <AiFillTwitterSquare />
+          <Link goTo="https://twitter.com/Cat_and_Paws">
+            <TwitterIcon />
+          </Link>
         </SocialIconBox>
         <SocialIconBox>
-          <AiFillGithub />
+          <Link goTo="https://github.com/limon4ikas">
+            <GitHubIcon />
+          </Link>
         </SocialIconBox>
       </SocialBox>
     </>

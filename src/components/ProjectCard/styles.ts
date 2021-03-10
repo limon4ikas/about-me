@@ -9,10 +9,10 @@ export enum Languages {
 }
 
 export enum LanguagesColors {
-  TypeScript = '#3A7BCC',
+  TypeScript = '#5fcfff',
   JavaScript = '#f1e05a',
-  HTML = '#e34c26',
-  CSS = '#563d7c',
+  HTML = '#ff4f47',
+  CSS = '#a95fff',
   defaultWhite = '#fff',
 }
 
