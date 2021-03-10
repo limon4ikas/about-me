@@ -15,11 +15,10 @@ const Header: FunctionComponent = () => {
     id: string
   ): void => {
     e.preventDefault();
-
     const goToElement = document.getElementById(`${id}`);
     if (!goToElement) return;
 
-    goToElement.scrollIntoView({ behavior: 'smooth' });
+    goToElement.scrollIntoView({ block: 'center', behavior: 'smooth' });
   };
 
   return (
