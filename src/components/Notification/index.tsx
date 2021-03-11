@@ -1,11 +1,52 @@
 import { FunctionComponent } from 'react';
-import { Container, Heading, Text } from './styles';
+import {
+  NotificationItem,
+  NotificationType,
+} from '../../containers/NotificationContainer/types';
+import {
+  Container,
+  Heading,
+  Text,
+  Content,
+  IconBox,
+  SuccessIcon,
+  InfoIcon,
+  WarningIcon,
+  DangerIcon,
+  CloseButton,
+  CloseIcon,
+} from './styles';
 
-const Notification: FunctionComponent<any> = ({ children, title, color }) => {
+const getIcon = (type: NotificationType) => {
+  switch (type) {
+    case NotificationType.Success:
+      return <SuccessIcon />;
+    case NotificationType.Info:
+      return <InfoIcon />;
+    case NotificationType.Warning:
+      return <WarningIcon />;
+    case NotificationType.Danger:
+      return <DangerIcon />;
+  }
+};
+
+const Notification: FunctionComponent<any> = ({
+  children,
+  title,
+  color,
+  id,
+  handleCloseClick,
+}) => {
   return (
     <Container color={color}>
-      <Heading>{title}</Heading>
-      <Text>{children}</Text>
+      <IconBox>{getIcon(title)}</IconBox>
+      <Content>
+        <Heading>{title}</Heading>
+        <Text>{children}</Text>
+      </Content>
+      <CloseButton onClick={() => handleCloseClick(id)}>
+        <CloseIcon />
+      </CloseButton>
     </Container>
   );
 };

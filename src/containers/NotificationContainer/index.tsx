@@ -17,17 +17,27 @@ const NotificationContainer: FunctionComponent<NotificationProps> = ({
     setList(notificationList);
   }, [notificationList]);
 
-  const renderList = list.map((item: NotificationItem) => {
-    return (
-      <Notification
-        key={item.id}
-        title={item.title}
-        color={item.backgroundColor}
-      >
-        {item.description}
-      </Notification>
-    );
-  });
+  const handleCloseClick = (id: number) => {
+    const index = list.findIndex((item) => item.id === id);
+    list.splice(index, 1);
+    setList([...list]);
+  };
+
+  const renderList = list.map(
+    ({ id, type, color, description }: NotificationItem) => {
+      return (
+        <Notification
+          key={id}
+          id={id}
+          title={type}
+          color={color}
+          handleCloseClick={handleCloseClick}
+        >
+          {description}
+        </Notification>
+      );
+    }
+  );
 
   return <Container>{renderList}</Container>;
 };

@@ -14,8 +14,7 @@ export enum NotificationColor {
 
 export interface NotificationItem {
   id: number;
-  title: NotificationType;
+  type: NotificationType;
   description: string;
-  backgroundColor: NotificationColor;
-  icon: string;
+  color: NotificationColor;
 }

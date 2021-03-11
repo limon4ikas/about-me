@@ -28,7 +28,7 @@ export interface Repo {
 }
 
 const Projects: FunctionComponent = () => {
-  const [repos, setRepos] = useState<Repo[] | []>([]);
+  const [repos, setRepos] = useState<Repo[] | null>(null);
 
   useEffect(() => {
     const getProjects = async () => {
@@ -75,32 +75,28 @@ const Projects: FunctionComponent = () => {
   const testList: NotificationItem[] = [
     {
       id: 1,
-      title: NotificationType.Success,
+      type: NotificationType.Success,
       description: 'This is a success toast component',
-      backgroundColor: NotificationColor.Success,
-      icon: '',
+      color: NotificationColor.Success,
     },
     {
       id: 2,
-      title: NotificationType.Danger,
+      type: NotificationType.Danger,
       description: 'This is an error toast component',
-      backgroundColor: NotificationColor.Danger,
-      icon: '',
+      color: NotificationColor.Danger,
     },
 
     {
       id: 3,
-      title: NotificationType.Info,
+      type: NotificationType.Info,
       description: 'This is an info toast component',
-      backgroundColor: NotificationColor.Info,
-      icon: '',
+      color: NotificationColor.Info,
     },
     {
       id: 4,
-      title: NotificationType.Warning,
+      type: NotificationType.Warning,
       description: 'This is a warning toast component',
-      backgroundColor: NotificationColor.Warning,
-      icon: '',
+      color: NotificationColor.Warning,
     },
   ];
 
