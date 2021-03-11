@@ -1,33 +1,34 @@
-import { FunctionComponent, useEffect, useState, useMemo } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { NotificationItem } from './types';
 import Notification from '../../components/Notification';
 import { Container } from './styles';
-import { createPortal } from 'react-dom';
 
 interface NotificationProps {
   notificationList: NotificationItem[] | [];
-  position?: string;
+  position?: 'top-left' | 'bottom-left' | 'top-right' | 'bottom-right';
 }
+
+//TODO: use CreatePortal to mount and unmount Notifications Container
 
 const NotificationContainer: FunctionComponent<NotificationProps> = ({
   notificationList,
+  position = 'bottom-right',
 }) => {
   const [list, setList] = useState<NotificationItem[] | []>([]);
-  const root = document.getElementById('app-container') as HTMLElement;
-  console.log(`THIS IS ${root}`);
+  // const root = document.getElementById('app-container') as HTMLElement;
+  // console.log(`THIS IS ${root}`);
 
   useEffect(() => {
     setList(notificationList);
 
-    // Clean notification container
+    //TODO: Clean notification container
     return () => {};
   }, [notificationList]);
 
   const handleCloseClick = (id: number) => {
-    const index = list.findIndex((item) => item.id === id);
-    const newList = [...list];
-
-    newList.splice(index, 1);
+    const newList = list.filter((item) => {
+      return item.id !== id;
+    });
 
     setList(newList);
   };

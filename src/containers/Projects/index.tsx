@@ -19,6 +19,7 @@ import {
   ProjectCardPlaceholder,
 } from './styles';
 import { Languages } from '../../components/ProjectCard/styles';
+import { randomId } from '../../utility';
 
 export interface Repo {
   id: number;
@@ -31,35 +32,8 @@ export interface Repo {
 
 const Projects: FunctionComponent = () => {
   const [repos, setRepos] = useState<Repo[] | null>(null);
-  const [error, setError] = useState<any>(null);
+  const [error, setError] = useState<string>('');
   const notificationList = useRef<NotificationItem[]>([]);
-
-  let testList: NotificationItem[] = [
-    // {
-    //   id: 1,
-    //   type: NotificationType.Success,
-    //   description: 'This is a success toast component',
-    //   color: NotificationColor.Success,
-    // },
-    // {
-    //   id: 2,
-    //   type: NotificationType.Danger,
-    //   description: 'This is an error toast component',
-    //   color: NotificationColor.Danger,
-    // },
-    // {
-    //   id: 3,
-    //   type: NotificationType.Info,
-    //   description: 'This is an info toast component',
-    //   color: NotificationColor.Info,
-    // },
-    // {
-    //   id: 4,
-    //   type: NotificationType.Warning,
-    //   description: 'This is a warning toast component',
-    //   color: NotificationColor.Warning,
-    // },
-  ];
 
   useEffect(() => {
     const getProjects = async () => {
@@ -67,10 +41,11 @@ const Projects: FunctionComponent = () => {
         const { data } = await github.get<Repo[]>('/users/limon4ikas/rep');
         setRepos(data);
       } catch (error) {
-        console.log(`ERROR IS: ${error.message}`);
+        console.error(`ERROR: ${error.message}`);
+        // TODO: Improve random id or use index as an id?
         const notificationError = {
-          id: 3,
-          type: NotificationType.Danger,
+          id: randomId(),
+          type: NotificationType.Error,
           description: error.message,
           color: NotificationColor.Danger,
         };
@@ -78,7 +53,7 @@ const Projects: FunctionComponent = () => {
           ...notificationList.current,
           notificationError,
         ];
-        setError(error);
+        setError(error.message);
       }
     };
 
@@ -88,7 +63,9 @@ const Projects: FunctionComponent = () => {
   if (!repos)
     return (
       <Container>
-        <NotificationContainer notificationList={notificationList.current} />
+        {error ? (
+          <NotificationContainer notificationList={notificationList.current} />
+        ) : null}
 
         <SectionNameContainer>
           <SectionHeading>Projects</SectionHeading>

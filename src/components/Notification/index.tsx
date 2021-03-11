@@ -25,7 +25,7 @@ const getIcon = (type: NotificationType) => {
       return <InfoIcon />;
     case NotificationType.Warning:
       return <WarningIcon />;
-    case NotificationType.Danger:
+    case NotificationType.Error:
       return <DangerIcon />;
   }
 };

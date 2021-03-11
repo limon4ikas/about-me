@@ -8,6 +8,7 @@ import Articles from './Articles';
 import Contact from './Contact';
 import { Container } from './styles';
 
+// TODO: Rework all general styled components for better reuse
 const App: FunctionComponent = () => {
   return (
     <Container id="app-container">
