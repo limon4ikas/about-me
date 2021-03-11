@@ -1,7 +1,8 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent, useEffect, useState, useMemo } from 'react';
 import { NotificationItem } from './types';
 import Notification from '../../components/Notification';
 import { Container } from './styles';
+import { createPortal } from 'react-dom';
 
 interface NotificationProps {
   notificationList: NotificationItem[] | [];
@@ -12,11 +13,14 @@ const NotificationContainer: FunctionComponent<NotificationProps> = ({
   notificationList,
 }) => {
   const [list, setList] = useState<NotificationItem[] | []>([]);
-
-  const root = document.getElementById('header') as HTMLElement;
+  const root = document.getElementById('app-container') as HTMLElement;
+  console.log(`THIS IS ${root}`);
 
   useEffect(() => {
     setList(notificationList);
+
+    // Clean notification container
+    return () => {};
   }, [notificationList]);
 
   const handleCloseClick = (id: number) => {
