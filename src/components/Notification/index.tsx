@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import {
-  NotificationItem,
+  NotificationColor,
   NotificationType,
 } from '../../containers/NotificationContainer/types';
 import {
@@ -30,7 +30,14 @@ const getIcon = (type: NotificationType) => {
   }
 };
 
-const Notification: FunctionComponent<any> = ({
+interface NotificationProps {
+  title: NotificationType;
+  color: NotificationColor;
+  id: number;
+  handleCloseClick: (id: number) => void;
+}
+
+const Notification: FunctionComponent<NotificationProps> = ({
   children,
   title,
   color,

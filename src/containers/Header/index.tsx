@@ -24,7 +24,7 @@ const Header: FunctionComponent = () => {
   };
 
   return (
-    <Container>
+    <Container id="header">
       <LogoBox>
         <Logo />
       </LogoBox>

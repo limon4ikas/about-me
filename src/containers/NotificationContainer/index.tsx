@@ -13,14 +13,19 @@ const NotificationContainer: FunctionComponent<NotificationProps> = ({
 }) => {
   const [list, setList] = useState<NotificationItem[] | []>([]);
 
+  const root = document.getElementById('header') as HTMLElement;
+
   useEffect(() => {
     setList(notificationList);
   }, [notificationList]);
 
   const handleCloseClick = (id: number) => {
     const index = list.findIndex((item) => item.id === id);
-    list.splice(index, 1);
-    setList([...list]);
+    const newList = [...list];
+
+    newList.splice(index, 1);
+
+    setList(newList);
   };
 
   const renderList = list.map(
