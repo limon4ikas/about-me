@@ -6,7 +6,7 @@ import {
 } from '../NotificationContainer/types';
 import github from '../../api/github';
 // COMPONENTS
-import SectionHeading from '../../components/SectionHeading';
+import Heading from '../../components/SectionHeading';
 import ProjectCard from '../../components/ProjectCard';
 import Button from '../../components/Button';
 import Link from '../../components/Link';
@@ -38,7 +38,7 @@ const Projects: FunctionComponent = () => {
   useEffect(() => {
     const getProjects = async () => {
       try {
-        const { data } = await github.get<Repo[]>('/users/limon4ikas/rep');
+        const { data } = await github.get<Repo[]>('/users/limon4ikas/repos');
         setRepos(data);
       } catch (error) {
         console.error(`ERROR: ${error.message}`);
@@ -62,31 +62,32 @@ const Projects: FunctionComponent = () => {
 
   if (!repos)
     return (
-      <Container>
+      <>
         {error ? (
           <NotificationContainer notificationList={notificationList.current} />
         ) : null}
+        <Container>
+          <SectionNameContainer>
+            <Heading type="h2">Projects</Heading>
+            <Button>
+              <Link goTo="https://github.com/limon4ikas">
+                Learn more <span>&#8594;</span>
+              </Link>
+            </Button>
+          </SectionNameContainer>
 
-        <SectionNameContainer>
-          <SectionHeading>Projects</SectionHeading>
-          <Button>
-            <Link goTo="https://github.com/limon4ikas">
-              Learn more <span>&#8594;</span>
-            </Link>
-          </Button>
-        </SectionNameContainer>
-
-        <CardsContainer>
-          <ProjectCardPlaceholder />
-          <ProjectCardPlaceholder />
-          <ProjectCardPlaceholder />
-          <ProjectCardPlaceholder />
-          <ProjectCardPlaceholder />
-          <ProjectCardPlaceholder />
-          <ProjectCardPlaceholder />
-          <ProjectCardPlaceholder />
-        </CardsContainer>
-      </Container>
+          <CardsContainer>
+            <ProjectCardPlaceholder />
+            <ProjectCardPlaceholder />
+            <ProjectCardPlaceholder />
+            <ProjectCardPlaceholder />
+            <ProjectCardPlaceholder />
+            <ProjectCardPlaceholder />
+            <ProjectCardPlaceholder />
+            <ProjectCardPlaceholder />
+          </CardsContainer>
+        </Container>
+      </>
     );
 
   const renderRepos = repos.map((repo: Repo) => {
@@ -96,7 +97,7 @@ const Projects: FunctionComponent = () => {
   return (
     <Container>
       <SectionNameContainer>
-        <SectionHeading>Projects</SectionHeading>
+        <Heading type="h2">Projects</Heading>
         <Button>
           <Link goTo="https://github.com/limon4ikas">
             Learn more <span>&#8594;</span>
