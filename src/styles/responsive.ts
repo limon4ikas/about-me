@@ -4,12 +4,12 @@
 // 87.5em - 1400px
 
 export enum ScreenSize {
-  mobileS = '320px',
-  mobileM = '400px',
-  mobileL = '500px',
-  tablet = '600px',
-  laptop = '1000px',
-  laptopL = '1400px',
+  mobileS = '20em',
+  mobileM = '33.3333em',
+  mobileL = '31.25em',
+  tablet = '37.5em',
+  laptop = '62.5em',
+  laptopL = '87.5em',
 }
 
 export const device = {
