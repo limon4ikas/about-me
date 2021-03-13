@@ -1,6 +1,6 @@
-import { FunctionComponent, useEffect, useState } from 'react';
-import github from '../../api/github';
+import { FunctionComponent } from 'react';
 import SocialIconsBox from '../../components/SocialIconsBox';
+import profilePhoto from '../../assets/img/profile-photo.png';
 import {
   Container,
   AboutMeContentBox,
@@ -14,20 +14,6 @@ import {
 } from './styles';
 
 const AboutMe: FunctionComponent = () => {
-  const [photoUrl, setPhotoUrl] = useState<string | undefined>(undefined);
-
-  useEffect(() => {
-    const getPhoto = async () => {
-      const {
-        data: { avatar_url: avatarUrl },
-      } = await github.get('/users/limon4ikas');
-
-      setPhotoUrl(avatarUrl);
-    };
-
-    getPhoto();
-  });
-
   return (
     <Container id="about">
       <AboutMeContentBox>
@@ -48,7 +34,7 @@ const AboutMe: FunctionComponent = () => {
       </AboutMeContentBox>
 
       <PhotoBox>
-        <Photo src={photoUrl} alt="My Photo" />
+        <Photo src={profilePhoto} alt="My Photo" />
       </PhotoBox>
     </Container>
   );
