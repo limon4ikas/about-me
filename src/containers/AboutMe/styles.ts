@@ -6,6 +6,7 @@ export const Container = styled.section`
   align-items: center;
   justify-content: space-between;
   height: 60vh;
+  scroll-margin-top: 10rem;
 
   padding: 0 4rem;
 

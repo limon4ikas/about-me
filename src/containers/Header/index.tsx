@@ -20,7 +20,7 @@ const Header: FunctionComponent = () => {
     const goToElement = document.getElementById(`${id}`);
     if (!goToElement) return;
 
-    goToElement.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    goToElement.scrollIntoView({ block: 'start', behavior: 'smooth' });
   };
 
   return (
