@@ -2,6 +2,9 @@ import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import Button from '../components/Button';
 import Link from '../components/Link';
+import Text from './Text';
+import Heading from './Heading';
+import DateTime from './Date';
 import { device } from '../styles/responsive';
 
 const Container = styled.article`
@@ -49,16 +52,10 @@ const HeadingBox = styled.div`
   gap: 2rem;
 `;
 
-const Heading = styled.h3`
+const ArticleName = styled(Heading)`
   color: #b2e2ff;
   font-weight: 300;
 `;
-
-const Date = styled.p`
-  color: #4e5169;
-`;
-
-const Text = styled.p``;
 
 const LinkBox = styled.div`
   align-self: flex-start;
@@ -74,8 +71,8 @@ const Article: FunctionComponent<ArticleProps> = ({ imgSrc }) => {
       <Photo src={imgSrc} />
       <ContentBox>
         <HeadingBox>
-          <Heading>Front End Tools</Heading>
-          <Date>March 08, 2021</Date>
+          <ArticleName type="h3">Front End Tools</ArticleName>
+          <DateTime date={'March 08, 2021'}>March 08, 2021</DateTime>
         </HeadingBox>
         <Text>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum

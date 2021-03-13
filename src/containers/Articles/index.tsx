@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import Heading from '../../components/SectionHeading';
+import Heading from '../../components/Heading';
 import Article from '../../components/Article';
 import article1 from '../../assets/img/article-1.jpg';
 import article2 from '../../assets/img/article-2.jpg';

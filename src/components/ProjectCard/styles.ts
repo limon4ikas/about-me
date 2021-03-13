@@ -40,9 +40,9 @@ export const Container = styled.div<cardStyleProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 2rem;
 
-  padding: 2rem 2rem;
+  padding: 2rem;
+  gap: 2rem;
 
   background-color: #2a2c3c;
   border-top-right-radius: 1rem;

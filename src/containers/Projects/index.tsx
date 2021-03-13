@@ -6,7 +6,7 @@ import {
 } from '../NotificationContainer/types';
 import github from '../../api/github';
 // COMPONENTS
-import Heading from '../../components/SectionHeading';
+import Heading from '../../components/Heading';
 import ProjectCard from '../../components/ProjectCard';
 import Button from '../../components/Button';
 import Link from '../../components/Link';
