@@ -45,8 +45,6 @@ export const IconBox = styled.div`
 
 export const Content = styled.div``;
 
-export const Heading = styled.h4``;
-
 export const Text = styled.p``;
 
 export const SuccessIcon = styled(AiFillCheckCircle)``;
