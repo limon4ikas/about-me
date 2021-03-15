@@ -1,19 +1,18 @@
 import { FunctionComponent } from 'react';
+import styled from 'styled-components';
 import Link from '../../components/Link';
-import {
-  Container,
-  Content,
-  Heading,
-  Text,
-  ButtonsBox,
-  Button,
-} from './styles';
+import Heading from '../../components/Heading';
+import { Container, Content, Text, ButtonsBox, Button } from './styles';
+
+const StyledHeading = styled(Heading)`
+  font-weight: 400;
+`;
 
 const Contact: FunctionComponent = () => {
   return (
     <Container id="contact">
       <Content>
-        <Heading>Let's meet</Heading>
+        <StyledHeading as="h2">Let's meet</StyledHeading>
         <Text>
           You can use one of the methods below to get in touch with me!
         </Text>

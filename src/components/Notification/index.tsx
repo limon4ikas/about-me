@@ -3,9 +3,9 @@ import {
   NotificationColor,
   NotificationType,
 } from '../../containers/NotificationContainer/types';
+import Heading from '../Heading';
 import {
   Container,
-  Heading,
   Text,
   Content,
   IconBox,
@@ -48,7 +48,7 @@ const Notification: FunctionComponent<NotificationProps> = ({
     <Container color={color}>
       <IconBox>{getIcon(title)}</IconBox>
       <Content>
-        <Heading>{title}</Heading>
+        <Heading as="h4">{title}</Heading>
         <Text>{children}</Text>
       </Content>
       <CloseButton onClick={() => handleCloseClick(id)}>

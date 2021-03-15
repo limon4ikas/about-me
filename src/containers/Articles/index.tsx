@@ -9,7 +9,7 @@ import { Container, ArticlesBox } from './styles';
 const Articles: FunctionComponent = () => {
   return (
     <Container id="articles">
-      <Heading type="h2">Articles</Heading>
+      <Heading as="h2">Articles</Heading>
       <ArticlesBox>
         <Article
           title="Front End Tools"

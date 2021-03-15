@@ -52,11 +52,6 @@ const HeadingBox = styled.div`
   gap: 2rem;
 `;
 
-const ArticleName = styled(Heading)`
-  color: #b2e2ff;
-  font-weight: 300;
-`;
-
 const LinkBox = styled.div`
   align-self: flex-start;
 `;
@@ -78,7 +73,7 @@ const Article: FunctionComponent<ArticleProps> = ({
       <Photo src={imgSrc} alt="article photo" />
       <ContentBox>
         <HeadingBox>
-          <ArticleName type="h3">{title}</ArticleName>
+          <Heading as="h3">{title}</Heading>
           <DateTime>{date}</DateTime>
         </HeadingBox>
         <Text>{children}</Text>

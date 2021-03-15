@@ -26,8 +26,6 @@ export const Content = styled.div`
   gap: 2rem;
 `;
 
-export const Heading = styled.h2``;
-
 export const Text = styled.p``;
 
 export const ButtonsBox = styled.div`
