@@ -90,9 +90,12 @@ const Projects: FunctionComponent = () => {
       </>
     );
 
-  const renderRepos = repos.map((repo: Repo) => {
-    return <ProjectCard repo={repo} key={repo.id} />;
-  });
+  const renderRepos = repos
+    .filter((repo) => repo.name !== 'limon4ikas')
+    .map((repo: Repo) => {
+      console.log(repo);
+      return <ProjectCard repo={repo} key={repo.id} />;
+    });
 
   return (
     <Container>
