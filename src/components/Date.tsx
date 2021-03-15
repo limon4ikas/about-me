@@ -6,7 +6,7 @@ const StyledDate = styled.time`
 `;
 
 interface DateProps {
-  date: string;
+  date?: string;
 }
 
 const DateTime: FunctionComponent<DateProps> = ({ children, date }) => {

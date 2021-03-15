@@ -43,7 +43,7 @@ const Projects: FunctionComponent = () => {
       } catch (error) {
         console.error(`ERROR: ${error.message}`);
         // TODO: Improve random id or use index as an id?
-        const notificationError = {
+        const notificationError: NotificationItem = {
           id: randomId(),
           type: NotificationType.Error,
           description: error.message,

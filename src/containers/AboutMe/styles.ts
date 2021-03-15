@@ -60,6 +60,9 @@ export const HeadingBottom = styled.span`
 `;
 
 export const PhotoBox = styled.div`
+  width: 20rem;
+  height: 20rem;
+
   @media ${device.mobileL} {
     display: none;
   }

@@ -18,14 +18,12 @@ const Contact: FunctionComponent = () => {
           You can use one of the methods below to get in touch with me!
         </Text>
         <ButtonsBox>
-          <Button>
-            <Link goTo="mailto:limon4ikas@gmail.com?subject=Meet me!&body=Greetings">
-              E-mail
-            </Link>
-          </Button>
-          <Button>
-            <Link goTo="tel:+7(999) 999-99-99">Phone</Link>
-          </Button>
+          <Link goTo="mailto:limon4ikas@gmail.com?subject=Meet me!&body=Greetings">
+            <Button>E-mail</Button>
+          </Link>
+          <Link goTo="tel:+7(999) 999-99-99">
+            <Button>Phone</Button>
+          </Link>
         </ButtonsBox>
       </Content>
     </Container>

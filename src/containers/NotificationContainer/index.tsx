@@ -15,8 +15,6 @@ const NotificationContainer: FunctionComponent<NotificationProps> = ({
   position = 'bottom-right',
 }) => {
   const [list, setList] = useState<NotificationItem[] | []>([]);
-  // const root = document.getElementById('app-container') as HTMLElement;
-  // console.log(`THIS IS ${root}`);
 
   useEffect(() => {
     setList(notificationList);

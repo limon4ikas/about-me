@@ -62,24 +62,26 @@ const LinkBox = styled.div`
 `;
 
 interface ArticleProps {
+  title: string;
   imgSrc: string;
+  date: string;
 }
 
-const Article: FunctionComponent<ArticleProps> = ({ imgSrc }) => {
+const Article: FunctionComponent<ArticleProps> = ({
+  title,
+  imgSrc,
+  date,
+  children,
+}) => {
   return (
     <Container>
-      <Photo src={imgSrc} />
+      <Photo src={imgSrc} alt="article photo" />
       <ContentBox>
         <HeadingBox>
-          <ArticleName type="h3">Front End Tools</ArticleName>
-          <DateTime date={'March 08, 2021'}>March 08, 2021</DateTime>
+          <ArticleName type="h3">{title}</ArticleName>
+          <DateTime>{date}</DateTime>
         </HeadingBox>
-        <Text>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-          impedit laborum cumque ipsam itaque, dolore eius delectus quaerat
-          dolores quasi recusandae perferendis veritatis assumenda non. Eligendi
-          ab velit aspernatur recusandae.
-        </Text>
+        <Text>{children}</Text>
         <LinkBox>
           <Button>
             <Link goTo="#">

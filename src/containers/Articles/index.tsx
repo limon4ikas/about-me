@@ -11,9 +11,38 @@ const Articles: FunctionComponent = () => {
     <Container id="articles">
       <Heading type="h2">Articles</Heading>
       <ArticlesBox>
-        <Article imgSrc={article1} />
-        <Article imgSrc={article2} />
-        <Article imgSrc={article3} />
+        <Article
+          title="Front End Tools"
+          date="March 08, 2021"
+          imgSrc={article1}
+        >
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+          impedit laborum cumque ipsam itaque, dolore eius delectus quaerat
+          dolores quasi recusandae perferendis veritatis assumenda non. Eligendi
+          ab velit aspernatur recusandae.
+        </Article>
+
+        <Article
+          title="Front End Tools"
+          date="March 08, 2021"
+          imgSrc={article2}
+        >
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+          impedit laborum cumque ipsam itaque, dolore eius delectus quaerat
+          dolores quasi recusandae perferendis veritatis assumenda non. Eligendi
+          ab velit aspernatur recusandae.
+        </Article>
+
+        <Article
+          title="Front End Tools"
+          date="March 08, 2021"
+          imgSrc={article3}
+        >
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+          impedit laborum cumque ipsam itaque, dolore eius delectus quaerat
+          dolores quasi recusandae perferendis veritatis assumenda non. Eligendi
+          ab velit aspernatur recusandae.
+        </Article>
       </ArticlesBox>
     </Container>
   );
