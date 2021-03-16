@@ -4,6 +4,9 @@ import { device } from '../../styles/responsive';
 export const Container = styled.section`
   margin-top: 8rem;
 
+  // TODO: #4 Fix padding cascade
+  // #4
+  // @limon4ikas
   @media ${device.mobileL} {
     padding: 0 !important;
   }
