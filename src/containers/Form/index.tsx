@@ -1,27 +1,7 @@
 import { FunctionComponent } from 'react';
 import Heading from '../../components/Heading';
+import Button from '../../components/Button';
 import styled from 'styled-components';
-
-const Button = styled.button`
-  text-transform: uppercase;
-  display: inline-block;
-  border: none;
-  font-size: inherit;
-  font-family: inherit;
-  background-color: #217aff;
-  border-radius: 1rem;
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
-
-  padding: 1rem 1.6rem;
-
-  transition: all 0.2s;
-
-  &:hover {
-    background-color: #448fff;
-  }
-`;
 
 const Container = styled.form`
   width: 30rem;
@@ -111,7 +91,7 @@ const Form: FunctionComponent = () => {
           <Label htmlFor="message">Message</Label>
         </FieldSet>
       </FormField>
-      <Button>Send Message</Button>
+      <Button primary>Send Message</Button>
     </Container>
   );
 };
