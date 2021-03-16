@@ -7,8 +7,6 @@ export const Container = styled.header`
   top: 0;
   background-color: #1f1f2f;
   z-index: 999;
-  /* border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem; */
   border-bottom: 3px solid #448fff;
 
   display: flex;
@@ -16,7 +14,6 @@ export const Container = styled.header`
   justify-content: space-between;
 
   height: 10rem;
-  padding: 0 4rem;
   font-size: 2rem;
 
   @media ${device.tablet} {

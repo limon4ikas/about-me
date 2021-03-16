@@ -8,8 +8,6 @@ export const Container = styled.section`
   height: 60vh;
   scroll-margin-top: 10rem;
 
-  padding: 0 4rem;
-
   @media ${device.tablet} {
     padding: 0 2rem;
     height: auto;

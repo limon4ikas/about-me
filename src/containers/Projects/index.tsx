@@ -69,7 +69,7 @@ const Projects: FunctionComponent = () => {
         <Container>
           <SectionNameContainer>
             <Heading as="h2">Projects</Heading>
-            <Button>
+            <Button stripped>
               <Link goTo="https://github.com/limon4ikas">
                 Learn more <span>&#8594;</span>
               </Link>
@@ -93,7 +93,6 @@ const Projects: FunctionComponent = () => {
   const renderRepos = repos
     .filter((repo) => repo.name !== 'limon4ikas')
     .map((repo: Repo) => {
-      console.log(repo);
       return <ProjectCard repo={repo} key={repo.id} />;
     });
 
@@ -101,7 +100,7 @@ const Projects: FunctionComponent = () => {
     <Container>
       <SectionNameContainer>
         <Heading>Projects</Heading>
-        <Button>
+        <Button stripped>
           <Link goTo="https://github.com/limon4ikas">
             Learn more <span>&#8594;</span>
           </Link>

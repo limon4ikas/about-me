@@ -9,6 +9,10 @@ export const Container = styled.div`
 
   background-color: #1f1f2f;
 
+  & > *:not(:last-child) {
+    padding: 0 4rem;
+  }
+
   @media ${device.laptopL} {
     border-radius: 0;
     margin: 0;
@@ -16,5 +20,9 @@ export const Container = styled.div`
 
   @media ${device.mobileL} {
     font-size: 1.4rem;
+
+    & > *:not(:last-child) {
+      padding: 0 2rem;
+    }
   }
 `;

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const StyledParagraph = styled.p``;
 
-const Paragraph: FunctionComponent = ({ children }) => {
-  return <StyledParagraph>{children}</StyledParagraph>;
+const Paragraph: FunctionComponent = ({ children, ...rest }) => {
+  return <StyledParagraph {...rest}>{children}</StyledParagraph>;
 };
 
 export default Paragraph;

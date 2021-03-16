@@ -3,10 +3,9 @@ import { device } from '../../styles/responsive';
 
 export const Container = styled.section`
   margin-top: 8rem;
-  padding: 0 4rem;
 
   @media ${device.mobileL} {
-    padding: 0;
+    padding: 0 !important;
   }
 `;
 

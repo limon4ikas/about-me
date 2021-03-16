@@ -78,7 +78,7 @@ const Article: FunctionComponent<ArticleProps> = ({
         </HeadingBox>
         <Text>{children}</Text>
         <LinkBox>
-          <Button>
+          <Button stripped>
             <Link goTo="#">
               Read more <span>&#8594;</span>
             </Link>
