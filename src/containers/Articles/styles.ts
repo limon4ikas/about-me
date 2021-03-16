@@ -3,7 +3,6 @@ import { device } from '../../styles/responsive';
 
 export const Container = styled.section`
   margin-top: 8rem;
-  padding: 0 4rem;
   scroll-margin-top: 10rem;
 
   @media ${device.mobileL} {

@@ -8,12 +8,10 @@ export const Container = styled.section`
 
   height: 80vh;
   margin-top: 8rem;
-  padding: 0 4rem;
 
   background-color: #181827;
 
   @media ${device.mobileL} {
-    height: 40vh;
     padding: 0 2rem;
   }
 `;

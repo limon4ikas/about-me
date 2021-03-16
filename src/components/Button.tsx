@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, MouseEventHandler } from 'react';
 import styled, { css } from 'styled-components';
 
 const Container = styled.button<ButtonProps>`
@@ -41,10 +41,20 @@ const Container = styled.button<ButtonProps>`
 interface ButtonProps {
   stripped?: boolean;
   primary?: boolean;
+  type?: any;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button: FunctionComponent<ButtonProps> = ({ children, ...rest }) => {
-  return <Container {...rest}>{children}</Container>;
+const Button: FunctionComponent<ButtonProps> = ({
+  onClick,
+  children,
+  ...rest
+}) => {
+  return (
+    <Container {...rest} onClick={onClick}>
+      {children}
+    </Container>
+  );
 };
 
 export default Button;

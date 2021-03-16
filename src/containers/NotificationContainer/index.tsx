@@ -14,7 +14,7 @@ const NotificationContainer: FunctionComponent<NotificationProps> = ({
   notificationList,
   position = 'bottom-right',
 }) => {
-  const [list, setList] = useState<NotificationItem[] | []>([]);
+  const [list, setList] = useState<NotificationItem[]>([]);
 
   useEffect(() => {
     setList(notificationList);

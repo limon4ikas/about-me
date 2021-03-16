@@ -1,97 +1,89 @@
-import { FunctionComponent } from 'react';
-import Heading from '../../components/Heading';
+import { ChangeEvent, FormEvent, FunctionComponent, useState } from 'react';
+import emailjs from 'emailjs-com';
 import Button from '../../components/Button';
-import styled from 'styled-components';
-
-const Container = styled.form`
-  width: 30rem;
-
-  & > *:not(:last-child) {
-    margin-bottom: 2rem;
-  }
-`;
-
-const FieldSet = styled.fieldset`
-  position: relative;
-  border: 0;
-
-  & label {
-    left: 1rem;
-    position: absolute;
-    top: 0;
-
-    opacity: 0;
-    transition: all 0.2s;
-  }
-
-  & input:not(:placeholder-shown) + label,
-  textarea:not(:placeholder-shown) + label {
-    background: transparent;
-    transform: translate(0, -50%);
-    opacity: 1;
-  }
-
-  & textarea {
-    resize: none;
-    height: 15rem;
-  }
-`;
-
-const FormField = styled.div``;
-
-const Label = styled.label`
-  font-weight: 400;
-  color: #b2e2ff;
-`;
-
-const Input = styled.input`
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  border: none;
-  outline: none;
-  border-radius: 0.6rem;
-  background-color: #1f1f2f;
-  width: 100%;
-
-  padding: 1rem 1.6rem;
-
-  transition: all 0.2s;
-
-  &:focus {
-    background-color: #2a2c3c;
-  }
-`;
-
-const FormName = styled(Heading)`
-  font-weight: 500;
-`;
+import {
+  Container,
+  FormName,
+  FormField,
+  FieldSet,
+  Input,
+  Label,
+} from './styles';
 
 const Form: FunctionComponent = () => {
+  const [name, setName] = useState<string>('');
+  const [mail, setMail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const USER_ID = 'user_qc6OtIgYEpURMlU4xHwUr';
+    const TEMPLATE_ID = 'template_j9hqmjq';
+
+    emailjs.sendForm('gmail', TEMPLATE_ID, e.currentTarget, USER_ID).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  };
+
   return (
-    <Container>
+    <Container onSubmit={handleSubmit}>
       <FormName as="h3">I'd love to hear from you!</FormName>
       <FormField>
         <FieldSet>
-          <Input id="name" placeholder="Name" />
+          <Input
+            id="name"
+            placeholder="Name"
+            value={name}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setName(e.target.value)
+            }
+            name="name"
+            type="text"
+          />
           <Label htmlFor="name">Name</Label>
         </FieldSet>
       </FormField>
 
       <FormField>
         <FieldSet>
-          <Input id="email" placeholder="E-mail Address" />
-          <Label htmlFor="email">E-mail Address</Label>
+          <Input
+            id="email"
+            placeholder="E-mail"
+            value={mail}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setMail(e.target.value)
+            }
+            name="reply_to"
+            type="text"
+          />
+          <Label htmlFor="email">E-mail</Label>
         </FieldSet>
       </FormField>
 
       <FormField>
         <FieldSet>
-          <Input as="textarea" id="message" placeholder="Message..." />
+          <Input
+            as="textarea"
+            id="message"
+            placeholder="Message..."
+            value={message}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
+              setMessage(e.target.value);
+            }}
+            name="message"
+            type="text"
+          />
           <Label htmlFor="message">Message</Label>
         </FieldSet>
       </FormField>
-      <Button primary>Send Message</Button>
+      <Button primary type="submit">
+        Send Message
+      </Button>
     </Container>
   );
 };

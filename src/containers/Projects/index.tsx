@@ -69,7 +69,7 @@ const Projects: FunctionComponent = () => {
         <Container>
           <SectionNameContainer>
             <Heading as="h2">Projects</Heading>
-            <Button>
+            <Button stripped>
               <Link goTo="https://github.com/limon4ikas">
                 Learn more <span>&#8594;</span>
               </Link>

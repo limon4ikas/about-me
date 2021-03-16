@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { device } from '../../styles/responsive';
 
 export const Container = styled.section`
   padding: 4rem;
 
-  @media only screen and (max-width: 31.25em) {
+  @media ${device.mobileL} {
     padding: 2rem;
   }
 `;
