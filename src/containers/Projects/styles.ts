@@ -5,7 +5,7 @@ export const Container = styled.section`
   margin-top: 8rem;
 
   @media ${device.mobileL} {
-    padding: 0;
+    padding: 0 !important;
   }
 `;
 

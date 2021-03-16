@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, FunctionComponent, useState } from 'react';
-import emailjs from 'emailjs-com';
+import { sendEmail } from '../../utility/index';
 import Button from '../../components/Button';
 import {
   Container,
@@ -10,6 +10,7 @@ import {
   Label,
 } from './styles';
 
+// TODO: Refactor for better reuse
 const Form: FunctionComponent = () => {
   const [name, setName] = useState<string>('');
   const [mail, setMail] = useState<string>('');
@@ -17,17 +18,8 @@ const Form: FunctionComponent = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const USER_ID = 'user_qc6OtIgYEpURMlU4xHwUr';
-    const TEMPLATE_ID = 'template_j9hqmjq';
 
-    emailjs.sendForm('gmail', TEMPLATE_ID, e.currentTarget, USER_ID).then(
-      (result) => {
-        console.log(result.text);
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+    sendEmail(e.currentTarget);
   };
 
   return (
