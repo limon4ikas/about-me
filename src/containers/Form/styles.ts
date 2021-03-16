@@ -50,7 +50,7 @@ export const Input = styled.input<InputProps>`
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-  border: none;
+  border: 1px solid transparent;
   outline: none;
   border-radius: 0.6rem;
   background-color: #1f1f2f;
@@ -60,8 +60,14 @@ export const Input = styled.input<InputProps>`
 
   transition: all 0.2s;
 
+  &:hover {
+    box-shadow: 0 0 0 4px rgba(68, 143, 255, 0.1);
+    background-color: #2a2c3c;
+  }
+
   &:focus {
     background-color: #2a2c3c;
+    border: 1px solid #217aff;
   }
 `;
 

@@ -4,7 +4,7 @@ import { Container, Content, Copyrightbox, DesignedText } from './styles';
 import Text from '../../components/Text';
 import Link from '../../components/Link';
 
-// TODO: #10 Add copyright and designed by box
+// BUG: #13 Change color only of the name on hover
 const Footer: FunctionComponent = () => {
   return (
     <Container>
