@@ -11,6 +11,7 @@ import {
 } from './styles';
 
 // TODO: #9 Export Form and Input components as isolated components
+// TODO: #14 Add outline and box shadow to the inputs
 const Form: FunctionComponent = () => {
   const [name, setName] = useState<string>('');
   const [mail, setMail] = useState<string>('');
@@ -36,6 +37,7 @@ const Form: FunctionComponent = () => {
             }
             name="name"
             type="text"
+            required
           />
           <Label htmlFor="name">Name</Label>
         </FieldSet>
@@ -52,6 +54,7 @@ const Form: FunctionComponent = () => {
             }
             name="reply_to"
             type="text"
+            required
           />
           <Label htmlFor="email">E-mail</Label>
         </FieldSet>

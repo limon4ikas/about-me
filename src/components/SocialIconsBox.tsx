@@ -48,7 +48,7 @@ const GitHubIcon = styled(AiFillGithub)`
 const SocialIconsBox: FunctionComponent = () => {
   return (
     <>
-      <FollowMe>Follow me</FollowMe>
+      <FollowMe>Social media</FollowMe>
       <SocialBox>
         <SocialIconBox>
           <Link goTo="https://www.instagram.com/limon4ikas/">
