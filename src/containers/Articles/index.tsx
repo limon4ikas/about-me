@@ -6,6 +6,7 @@ import article2 from '../../assets/img/article-2.jpg';
 import article3 from '../../assets/img/article-3.jpg';
 import { Container, ArticlesBox } from './styles';
 
+// TODO: #11 Add or fetch articles from blog api
 const Articles: FunctionComponent = () => {
   return (
     <Container id="articles">
