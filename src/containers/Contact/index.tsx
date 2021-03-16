@@ -5,6 +5,7 @@ import Form from '../Form';
 
 const TextBox = styled.div``;
 
+//TODO: #8 Create hero component to the left of form component
 const Contact: FunctionComponent = () => {
   return (
     <Container id="contact">

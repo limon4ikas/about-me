@@ -17,6 +17,7 @@ import {
   CloseIcon,
 } from './styles';
 
+// TODO: #6 Create dynamicly imported icon component
 const getIcon = (type: NotificationType) => {
   switch (type) {
     case NotificationType.Success:

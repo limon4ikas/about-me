@@ -10,7 +10,7 @@ import {
   Label,
 } from './styles';
 
-// TODO: Refactor for better reuse
+// TODO: #9 Export Form and Input components as isolated components
 const Form: FunctionComponent = () => {
   const [name, setName] = useState<string>('');
   const [mail, setMail] = useState<string>('');
