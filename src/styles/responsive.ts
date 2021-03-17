@@ -8,7 +8,7 @@ export enum ScreenSize {
   mobileM = '33.3333em',
   mobileL = '31.25em',
   tablet = '37.5em',
-  laptop = '62.5em',
+  laptop = '75em',
   laptopL = '87.5em',
 }
 

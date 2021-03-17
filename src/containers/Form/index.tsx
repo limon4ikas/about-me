@@ -11,7 +11,8 @@ import {
 } from './styles';
 
 // TODO: #9 Export Form and Input components as isolated components
-// TODO: #14 Add outline and box shadow to the inputs
+// TODO: #17 Add custom error messages for form inputs
+// TODO: #18 Add spinner when sending is in progress
 const Form: FunctionComponent = () => {
   const [name, setName] = useState<string>('');
   const [mail, setMail] = useState<string>('');
@@ -72,6 +73,7 @@ const Form: FunctionComponent = () => {
             }}
             name="message"
             type="text"
+            required
           />
           <Label htmlFor="message">Message</Label>
         </FieldSet>

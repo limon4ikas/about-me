@@ -6,7 +6,6 @@ const Container = styled.button<ButtonProps>`
   font-size: inherit;
   font-family: inherit;
   border: none;
-  outline: none;
   cursor: pointer;
   font-weight: 300;
   transition: all 0.2s;

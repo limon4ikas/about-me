@@ -21,9 +21,8 @@ body {
     line-height: 1.4;
     font-weight: 300;
 }
+
+::selection {
+    background-color: #448fff;
+}
 `;
-
-/* ========== BREAKPOINTS ========== */
-
-// 1200px
-// 750px

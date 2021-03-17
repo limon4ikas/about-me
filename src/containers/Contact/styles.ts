@@ -2,17 +2,20 @@ import styled from 'styled-components';
 import { device } from '../../styles/responsive';
 
 export const Container = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-areas: 'hero hero form';
+  align-items: start;
+  justify-items: center;
+  gap: 4rem;
 
-  height: 80vh;
   margin-top: 8rem;
+  padding: 4rem !important;
 
   background-color: #181827;
 
-  @media ${device.mobileL} {
+  @media ${device.laptop} {
     padding: 0 2rem;
+    grid-template-areas: 'hero' 'form';
   }
 `;
 

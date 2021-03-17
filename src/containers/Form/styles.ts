@@ -3,6 +3,8 @@ import Heading from '../../components/Heading';
 
 export const Container = styled.form`
   width: 30rem;
+  grid-area: form;
+  padding: 2rem;
 
   & > *:not(:last-child) {
     margin-bottom: 2rem;

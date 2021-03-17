@@ -8,10 +8,10 @@ import Articles from './Articles';
 import Contact from './Contact';
 import { Container } from './styles';
 
-// TODO: Rework all general styled components for better reuse
+// TODO: #19 Show spinner when loading app
 const App: FunctionComponent = () => {
   return (
-    <Container id="app-container">
+    <Container>
       <GlobalStyles />
       <Header />
       <AboutMe />
