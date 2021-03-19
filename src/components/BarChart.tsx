@@ -26,6 +26,14 @@ const data = [
   { name: 'React', value: 55, color: SkillColors.React },
 ];
 
+const colors = [
+  SkillColors.HTML,
+  SkillColors.CSS,
+  SkillColors.JavaScript,
+  SkillColors.TypeScript,
+  SkillColors.React,
+];
+
 class SkillsChart extends PureComponent {
   render() {
     return (
@@ -35,9 +43,11 @@ class SkillsChart extends PureComponent {
           <YAxis unit="%" />
           <Legend />
           <Tooltip />
-          {data.map((skill) => (
-            <Bar dataKey="value" fill={skill.color} />
-          ))}
+          <Bar dataKey="value">
+            {data.map((skill, index) => (
+              <Cell key={`cell-${index}`} fill={skill.color} />
+            ))}
+          </Bar>
         </BarChart>
       </ResponsiveContainer>
     );
