@@ -1,14 +1,15 @@
 // Breakpoints
+// 25em = 400px
 // 31.25em - 500px
 // 37.5em - 600px
 // 87.5em - 1400px
 
 export enum ScreenSize {
   mobileS = '20em',
-  mobileM = '33.3333em',
+  mobileM = '25em',
   mobileL = '31.25em',
   tablet = '37.5em',
-  laptop = '75em',
+  laptop = '62.5em',
   laptopL = '87.5em',
 }
 

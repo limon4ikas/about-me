@@ -3,19 +3,26 @@ import { device } from '../../styles/responsive';
 
 export const Container = styled.section`
   display: grid;
-  grid-template-areas: 'hero hero form';
+  grid-template-areas: 'hero form';
+  grid-template-columns: 2fr 1fr;
   align-items: start;
-  justify-items: center;
   gap: 4rem;
 
-  margin-top: 8rem;
+  margin-top: 4rem;
   padding: 4rem !important;
 
   background-color: #181827;
 
   @media ${device.laptop} {
     padding: 0 2rem;
-    grid-template-areas: 'hero' 'form';
+    grid-template-areas:
+      'hero hero'
+      'form form';
+    justify-items: center;
+  }
+
+  @media ${device.mobileL} {
+    padding: 2rem !important;
   }
 `;
 
@@ -26,5 +33,3 @@ export const Content = styled.div`
   justify-content: space-between;
   gap: 2rem;
 `;
-
-export const Text = styled.p``;

@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, FunctionComponent, useState } from 'react';
 import { sendEmail } from '../../utility/index';
-import Button from '../../components/Button';
+import Button from '../Button';
 import {
   Container,
   FormName,

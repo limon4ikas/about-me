@@ -97,7 +97,7 @@ const Projects: FunctionComponent = () => {
   return (
     <Container>
       <SectionNameContainer>
-        <Heading>Projects</Heading>
+        <Heading as="h2">Projects</Heading>
         <Button stripped>
           <Link goTo="https://github.com/limon4ikas">
             Learn more <span>&#8594;</span>

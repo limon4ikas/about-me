@@ -1,13 +1,23 @@
 import styled from 'styled-components';
-import Heading from '../../components/Heading';
+import Heading from '../Heading';
+import { device } from '../../styles/responsive';
 
 export const Container = styled.form`
-  width: 30rem;
+  width: 100%;
   grid-area: form;
   padding: 2rem;
+  justify-self: center;
+  max-width: 50rem;
 
   & > *:not(:last-child) {
     margin-bottom: 2rem;
+  }
+
+  @media ${device.tablet} {
+    padding: 0;
+    &:last-child {
+      text-align: center;
+    }
   }
 `;
 
@@ -75,4 +85,9 @@ export const Input = styled.input<InputProps>`
 
 export const FormName = styled(Heading)`
   font-weight: 500;
+  font-size: 2.5rem;
+
+  @media ${device.tablet} {
+    font-size: 2rem;
+  }
 `;
