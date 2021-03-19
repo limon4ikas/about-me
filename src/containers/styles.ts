@@ -3,9 +3,9 @@ import { device } from '../styles/responsive';
 
 export const Container = styled.div`
   position: relative;
-  max-width: 144rem;
-  margin: 0 auto;
+  max-width: 120rem;
   font-size: 1.6rem;
+  margin: 0 auto;
 
   background-color: #1f1f2f;
 
@@ -15,7 +15,6 @@ export const Container = styled.div`
 
   @media ${device.laptopL} {
     border-radius: 0;
-    margin: 0;
   }
 
   @media ${device.mobileL} {

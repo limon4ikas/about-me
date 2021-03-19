@@ -5,21 +5,19 @@ import {
   NotificationType,
 } from '../NotificationContainer/types';
 import github from '../../api/github';
-// COMPONENTS
 import Heading from '../../components/Heading';
 import ProjectCard from '../../components/ProjectCard';
 import Button from '../../components/Button';
 import Link from '../../components/Link';
 import NotificationContainer from '../NotificationContainer';
-// Styles
 import {
   Container,
   SectionNameContainer,
   CardsContainer,
   ProjectCardPlaceholder,
 } from './styles';
-import { Languages } from '../../components/ProjectCard/styles';
 import { randomId } from '../../utility';
+import { Languages } from '../../components/ProjectCard/styles';
 
 export interface Repo {
   id: number;
@@ -42,7 +40,7 @@ const Projects: FunctionComponent = () => {
         setRepos(data);
       } catch (error) {
         console.error(`ERROR: ${error.message}`);
-        // TODO: Improve random id or use index as an id?
+        // TODO: #16 Improve random id or use index as an id?
         const notificationError: NotificationItem = {
           id: randomId(),
           type: NotificationType.Error,
@@ -99,7 +97,7 @@ const Projects: FunctionComponent = () => {
   return (
     <Container>
       <SectionNameContainer>
-        <Heading>Projects</Heading>
+        <Heading as="h2">Projects</Heading>
         <Button stripped>
           <Link goTo="https://github.com/limon4ikas">
             Learn more <span>&#8594;</span>
