@@ -7,6 +7,7 @@ export const Container = styled.section`
   grid-template-columns: 2fr 1fr;
   align-items: start;
   gap: 4rem;
+  scroll-margin-top: 10rem;
 
   margin-top: 4rem;
   padding: 4rem !important;

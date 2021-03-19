@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Articles from './Articles';
 import Contact from './Contact';
 import { Container } from './styles';
+import MySkills from './MySkills';
 
 // TODO: #19 Show spinner when loading app
 const App: FunctionComponent = () => {
@@ -16,6 +17,7 @@ const App: FunctionComponent = () => {
       <Header />
       <AboutMe />
       <Projects />
+      <MySkills />
       <Articles />
       <Contact />
       <Footer />
