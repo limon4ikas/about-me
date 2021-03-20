@@ -19,41 +19,46 @@ const ChartBox = styled.div`
 const data = [
   {
     skill: 'HTML',
-    A: 120,
-    B: 110,
-    fullMark: 150,
+    value: 100,
   },
   {
     skill: 'CSS',
-    A: 98,
-    B: 130,
-    fullMark: 150,
+    value: 78,
   },
   {
     skill: 'Javascript',
-    A: 86,
-    B: 130,
-    fullMark: 150,
+    value: 75,
   },
   {
     skill: 'Typescript',
-    A: 99,
-    B: 100,
-    fullMark: 150,
+    value: 55,
   },
   {
     skill: 'React',
-    A: 85,
-    B: 90,
-    fullMark: 150,
+    value: 65,
   },
   {
     skill: 'Redux',
-    A: 65,
-    B: 85,
-    fullMark: 150,
+    value: 45,
   },
 ];
+
+const customTick = (_: number, index: number) => {
+  switch (index) {
+    case 0:
+      return 'Basic';
+    case 1:
+      return 'Medium';
+    case 2:
+      return 'Good';
+    case 3:
+      return 'High';
+    case 4:
+      return 'Master';
+    default:
+      return 'Not Found';
+  }
+};
 
 const Chart: FunctionComponent = () => {
   return (
@@ -64,13 +69,13 @@ const Chart: FunctionComponent = () => {
           <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
             <PolarGrid />
             <PolarAngleAxis dataKey="skill" />
-            <PolarRadiusAxis />
+            <PolarRadiusAxis tickFormatter={customTick} />
             <Radar
               name="Mike"
-              dataKey="A"
-              stroke="#8884d8"
-              fill="#8884d8"
-              fillOpacity={0.6}
+              dataKey="value"
+              stroke="#a6e22e"
+              fill="#a6e22e"
+              fillOpacity={0.3}
             />
           </RadarChart>
         </ResponsiveContainer>
