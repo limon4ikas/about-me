@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Articles from './Articles';
 import Contact from './Contact';
 import { Container } from './styles';
+import Chart from '../components/Chart';
 
 // TODO: #19 Show spinner when loading app
 const App: FunctionComponent = () => {
@@ -15,6 +16,7 @@ const App: FunctionComponent = () => {
       <GlobalStyles />
       <Header />
       <AboutMe />
+      <Chart />
       <Projects />
       <Articles />
       <Contact />
