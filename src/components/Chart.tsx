@@ -1,4 +1,4 @@
-import { FunctionComponent, PureComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 import Heading from './Heading';
 import {
   Radar,
@@ -9,11 +9,55 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import styled from 'styled-components';
+import { FaGitAlt } from 'react-icons/fa';
+import {
+  SiCss3,
+  SiHtml5,
+  SiReact,
+  SiRedux,
+  SiSass,
+  SiStyledComponents,
+  SiTypescript,
+} from 'react-icons/si';
+import Text from './Text';
 
-const Container = styled.section``;
+const Container = styled.section`
+  margin-top: 8rem;
+`;
+
+const Content = styled.div`
+  display: grid;
+  grid-template-areas: 'skills chart';
+  align-items: center;
+  justify-items: center;
+`;
 
 const ChartBox = styled.div`
   height: 40rem;
+  width: 40rem;
+  grid-area: chart;
+`;
+
+const SkillsBox = styled.div`
+  grid-area: skills;
+`;
+
+const SkillList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+`;
+
+const SkillItem = styled.li`
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+  }
 `;
 
 const data = [
@@ -64,22 +108,67 @@ const Chart: FunctionComponent = () => {
   return (
     <Container>
       <Heading as="h2">My Skills</Heading>
-      <ChartBox>
-        <ResponsiveContainer width="100%" height="100%">
-          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-            <PolarGrid />
-            <PolarAngleAxis dataKey="skill" />
-            <PolarRadiusAxis tickFormatter={customTick} />
-            <Radar
-              name="Mike"
-              dataKey="value"
-              stroke="#a6e22e"
-              fill="#a6e22e"
-              fillOpacity={0.3}
-            />
-          </RadarChart>
-        </ResponsiveContainer>
-      </ChartBox>
+      <Content>
+        <SkillsBox>
+          <SkillList>
+            <SkillItem>
+              <SiHtml5 />
+              <Text>HTML</Text>
+            </SkillItem>
+            <SkillItem>
+              <SiCss3 />
+              <Text>CSS</Text>
+            </SkillItem>
+            <SkillItem>
+              <SiSass />
+              <Text>SASS</Text>
+            </SkillItem>
+            <SkillItem>
+              <SiTypescript />
+              <Text>Typescript</Text>
+            </SkillItem>
+            <SkillItem>
+              <SiReact />
+              <Text>React</Text>
+            </SkillItem>
+            <SkillItem>
+              <SiRedux />
+              <Text>Redux</Text>
+            </SkillItem>
+            <SkillItem>
+              <FaGitAlt />
+              <Text>Git</Text>
+            </SkillItem>
+            <SkillItem>
+              <SiStyledComponents />
+              <Text>Styled Components</Text>
+            </SkillItem>
+          </SkillList>
+        </SkillsBox>
+        <ChartBox>
+          <ResponsiveContainer width="100%" height="100%">
+            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+              <PolarGrid />
+              <PolarAngleAxis
+                dataKey="skill"
+                tick={{ fill: '#fff', fontFamily: 'Roboto' }}
+              />
+              <PolarRadiusAxis
+                tickFormatter={customTick}
+                domain={[0, 100]}
+                tick={{ fill: '#fff', fontFamily: 'Roboto' }}
+              />
+              <Radar
+                name="Mike"
+                dataKey="value"
+                stroke="#a6e22e"
+                fill="#a6e22e"
+                fillOpacity={0.3}
+              />
+            </RadarChart>
+          </ResponsiveContainer>
+        </ChartBox>
+      </Content>
     </Container>
   );
 };
