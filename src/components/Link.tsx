@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
+import { device } from '../styles/responsive';
 
 const StyledLink = styled.a<LinkProps>`
   &:link,
@@ -9,6 +10,10 @@ const StyledLink = styled.a<LinkProps>`
     color: currentColor;
     display: flex;
     align-items: center;
+  }
+
+  @media ${device.mobileL} {
+    font-size: 1.4rem !important;
   }
 `;
 

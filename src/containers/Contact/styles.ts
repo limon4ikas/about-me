@@ -13,6 +13,8 @@ export const Container = styled.section`
 
   background-color: #181827;
 
+  scroll-margin-top: 10rem;
+
   @media ${device.laptop} {
     padding: 0 2rem;
     grid-template-areas:

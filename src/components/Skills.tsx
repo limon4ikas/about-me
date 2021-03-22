@@ -1,4 +1,6 @@
-import styled from 'styled-components';
+import { FunctionComponent } from 'react';
+import Text from './Text';
+import { device } from '../styles/responsive';
 import { FaGitAlt } from 'react-icons/fa';
 import {
   SiCss3,
@@ -6,11 +8,10 @@ import {
   SiReact,
   SiRedux,
   SiSass,
-  SiStyledComponents,
   SiTypescript,
+  SiJavascript,
 } from 'react-icons/si';
-import Text from './Text';
-import { FunctionComponent } from 'react';
+import styled from 'styled-components';
 
 const SkillsBox = styled.div`
   grid-area: skills;
@@ -18,18 +19,26 @@ const SkillsBox = styled.div`
 
 const SkillList = styled.ul`
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.8rem;
+  font-size: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 2rem;
+  grid-column-gap: 8rem;
+  align-items: center;
+
+  @media ${device.mobileM} {
+    grid-column-gap: 4rem;
+    font-size: 1.6rem;
+  }
 `;
 
 const SkillItem = styled.li`
   display: flex;
   align-items: center;
-
   svg {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     margin-right: 1rem;
   }
 `;
@@ -55,6 +64,10 @@ const Skills: FunctionComponent = () => {
           <Text>Typescript</Text>
         </SkillItem>
         <SkillItem>
+          <SiJavascript />
+          <Text>Javascript</Text>
+        </SkillItem>
+        <SkillItem>
           <SiReact />
           <Text>React</Text>
         </SkillItem>
@@ -65,10 +78,6 @@ const Skills: FunctionComponent = () => {
         <SkillItem>
           <FaGitAlt />
           <Text>Git</Text>
-        </SkillItem>
-        <SkillItem>
-          <SiStyledComponents />
-          <Text>Styled Components</Text>
         </SkillItem>
       </SkillList>
     </SkillsBox>

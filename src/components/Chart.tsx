@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import styled from 'styled-components';
+import { device } from '../styles/responsive';
 import Skills from './Skills';
 
 const Container = styled.section`
@@ -20,38 +21,51 @@ const Content = styled.div`
   grid-template-areas: 'skills chart';
   align-items: center;
   justify-items: center;
+
+  @media ${device.laptop} {
+    margin-top: 4rem;
+    grid-template-areas: 'skills' 'chart';
+    grid-row-gap: 4rem;
+  }
 `;
 
 const ChartBox = styled.div`
-  height: 40rem;
   width: 40rem;
+  height: 40rem;
   grid-area: chart;
+
+  @media ${device.mobileL} {
+    width: 30rem;
+    height: 30rem;
+  }
 `;
 
 const data = [
   {
-    skill: 'HTML',
-    value: 100,
+    skill: 'Javascript',
+    value: 80,
   },
+  {
+    skill: 'HTML',
+    value: 90,
+  },
+
   {
     skill: 'CSS',
-    value: 78,
+    value: 90,
   },
-  {
-    skill: 'Javascript',
-    value: 75,
-  },
+
   {
     skill: 'Typescript',
-    value: 55,
-  },
-  {
-    skill: 'React',
     value: 65,
   },
   {
+    skill: 'React',
+    value: 85,
+  },
+  {
     skill: 'Redux',
-    value: 45,
+    value: 80,
   },
 ];
 

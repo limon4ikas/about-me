@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { device } from '../../styles/responsive';
 import Text from '../../components/Text';
+import Link from '../../components/Link';
 
 export const Container = styled.section`
   padding: 4rem;
@@ -16,7 +17,8 @@ export const Content = styled.div`
   gap: 1rem;
 `;
 
-export const Copyrightbox = styled.div`
+export const CopyrightBox = styled.div`
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
