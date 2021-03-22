@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { device } from '../../styles/responsive';
 import Text from '../../components/Text';
-import Link from '../../components/Link';
 
 export const Container = styled.section`
   padding: 4rem;
