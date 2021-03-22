@@ -108,7 +108,7 @@ const BusinessCard: FunctionComponent = () => {
       </BottomText>
       <MakeWork as="h3">Let's make it work</MakeWork>
       <Box>
-        <LinkedWithMe goTo="tel:+79995285910">+7 (999) 528-59-10</LinkedWithMe>
+        <LinkedWithMe goTo="tel:+79995285910">+7 (999) 999-99-99</LinkedWithMe>
         <LinkedWithMe goTo="mailto:kostromindv.work@gmail.com">
           kostromindv.work@gmail.com
         </LinkedWithMe>
