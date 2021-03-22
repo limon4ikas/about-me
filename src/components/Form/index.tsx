@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, FunctionComponent, useState } from 'react';
 import { sendEmail } from '../../utility/index';
 import Button from '../Button';
+import Heading from '../Heading';
 import {
   Container,
   FormName,
@@ -10,19 +11,33 @@ import {
   Label,
 } from './styles';
 
+type FormStatus = 'sending' | 'ok' | 'error' | '';
+
 // TODO: #9 Export Form and Input components as isolated components
 // TODO: #17 Add custom error messages for form inputs
-// TODO: #18 Add spinner when sending is in progress
 const Form: FunctionComponent = () => {
   const [name, setName] = useState<string>('');
   const [mail, setMail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
+  const [status, setStatus] = useState<FormStatus>('');
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    sendEmail(e.currentTarget);
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    try {
+      e.preventDefault();
+      setStatus('sending');
+      await sendEmail(e.currentTarget);
+      setStatus('ok');
+    } catch (error) {
+      setStatus('error');
+      console.error(error);
+    }
   };
+
+  if (status === 'sending') return <Heading>SENDING</Heading>;
+
+  if (status === 'ok') return <Heading>SEND</Heading>;
+
+  if (status === 'error') return <Heading>ERROR</Heading>;
 
   return (
     <Container onSubmit={handleSubmit}>
